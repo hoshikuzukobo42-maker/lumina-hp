@@ -1,0 +1,38 @@
+/* 頭頂が固定ナビの下に隠れないよう、画像全体をナビより下に置く。 */
+body { padding-top: 64px; }
+section { scroll-margin-top: 80px; }
+#hero > img { height: auto; }
+#hero > div:nth-of-type(2) > div { padding-top: 0 !important; }
+
+/* 固定高の掲載枠でも、上下を切る cover を使わず画像全体を収める。 */
+#space img,
+#gallery img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: oklch(0.985 0.008 285);
+}
+
+/* 丸型アイコンにも内側の余白を設け、髪と髪飾りを円の縁から離す。 */
+footer img {
+  object-fit: contain !important;
+  padding: 3px;
+  background: white;
+}
+
+/* 狭い画面でも文章を顔の上に重ねず、画像を全幅で表示する。 */
+@media (max-width: 720px) {
+  #nav { padding: 0 18px !important; }
+  #nav > div { gap: 14px !important; }
+  #hero > div:nth-of-type(2) {
+    position: relative !important;
+    padding: 24px !important;
+  }
+  #hero > div:nth-of-type(2) h1 { font-size: 64px !important; }
+  #hero > div:nth-of-type(4) { display: none !important; }
+  #about, #space, #gallery, #roadmap { padding: 64px 24px !important; }
+  #about > div, #roadmap > div { grid-template-columns: 1fr !important; gap: 32px !important; }
+  #space > div > div { grid-template-columns: 1fr !important; }
+  #gallery > div > div { grid-template-columns: 1fr !important; height: auto !important; }
+  #gallery > div > div > div { grid-column: auto !important; height: auto !important; }
+  #gallery img { height: auto !important; }
+}
