@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lumina</title>
+  <title>Lumina（ルミナ）｜3D AIキャラクター開発プロジェクト</title>
   <link rel="stylesheet" href="head-safe.css?v=outfit01-headsafe-v1">
-  <meta name="description" content="3D空間で話せる、そばで一緒に動いてくれる。オリジナルキャラクター Lumina の公式サイト。">
+  <meta name="description" content="会話の先まで、一緒に。Lumina（ルミナ）は、言葉を交わし、周囲を理解して自分で動くことを目指す3D AIキャラクター。開発の取り組み、ビジュアル、利用・二次創作ガイドラインをご紹介します。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
@@ -27,6 +27,11 @@
       from { opacity: 0; transform: translateY(22px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+    @media (max-width: 720px) {
+      footer { padding: 40px 24px !important; }
+      footer > div { flex-direction: column; align-items: flex-start !important; gap: 24px !important; }
+      footer > div > div:last-child { text-align: left !important; }
+    }
   </style>
   <meta name="google-site-verification" content="9dIVVuB6OeoLTcx0quEehQUdjyuX92ICu6KX9doKSK4" />
 </head>
@@ -37,7 +42,7 @@
   <span style="font-family: 'DM Sans', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.40 0.22 285);">LUMINA</span>
   <div style="display: flex; gap: 36px;">
     <a href="#about" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">About</a>
-    <a href="#space" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">3D Space</a>
+    <a href="#space" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Development</a>
     <a href="#gallery" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Gallery</a>
     <a href="#roadmap" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Roadmap</a>
   </div>
@@ -49,16 +54,16 @@
   <div style="position: absolute; inset: 0; background: linear-gradient(to right, oklch(0.985 0.008 285 / 0.90) 0%, oklch(0.985 0.008 285 / 0.68) 30%, oklch(0.985 0.008 285 / 0.12) 58%, transparent 72%); pointer-events: none;"></div>
   <div style="position: absolute; inset: 0; display: flex; align-items: center; padding: 0 72px;">
     <div style="position: relative; z-index: 2; max-width: 500px; padding-top: 64px;">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: oklch(0.60 0.14 285); font-weight: 500; margin-bottom: 22px; animation: heroIn 0.7s ease both;">Original Character</p>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: oklch(0.60 0.14 285); font-weight: 500; margin-bottom: 22px; animation: heroIn 0.7s ease both;">3D AI Character Project</p>
       <h1 style="font-family: 'DM Sans', sans-serif; font-size: clamp(72px, 7.5vw, 112px); font-weight: 300; letter-spacing: 0.015em; color: oklch(0.24 0.12 285); line-height: 0.93; margin-bottom: 32px; animation: heroIn 0.75s 0.08s ease both;">Lumina</h1>
       <div style="width: 44px; height: 1.5px; background: linear-gradient(to right, oklch(0.68 0.14 210), oklch(0.58 0.14 285)); margin-bottom: 28px; animation: heroIn 0.75s 0.16s ease both;"></div>
       <div style="animation: heroIn 0.75s 0.26s ease both;">
-        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 17px; line-height: 1.9; color: oklch(0.34 0.07 285); font-weight: 300; margin-bottom: 10px;">3D空間で話せる、そばで一緒に動いてくれる。</p>
-        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: oklch(0.58 0.05 285); font-weight: 300;">画面の向こうではなく、同じ空間にいるように。</p>
+        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 17px; line-height: 1.9; color: oklch(0.34 0.07 285); font-weight: 300; margin-bottom: 10px;">会話の先まで、一緒に。</p>
+        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: oklch(0.58 0.05 285); font-weight: 300;">言葉を交わし、周りを見て、自分で動く。<br>あなたと同じ空間で過ごすAIキャラクターを<br>目指して、ルミナを開発しています。</p>
       </div>
       <div style="display: flex; gap: 14px; margin-top: 48px; animation: heroIn 0.75s 0.38s ease both;">
-        <a href="#about" style="padding: 13px 30px; background: oklch(0.40 0.22 285); color: white; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">Luminaを知る</a>
-        <a href="#space" style="padding: 12px 28px; border: 1.5px solid oklch(0.72 0.12 285); color: oklch(0.40 0.22 285); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">3D Space</a>
+        <a href="#about" style="padding: 13px 30px; background: oklch(0.40 0.22 285); color: white; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">ルミナを知る</a>
+        <a href="#space" style="padding: 12px 28px; border: 1.5px solid oklch(0.72 0.12 285); color: oklch(0.40 0.22 285); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">開発について</a>
       </div>
     </div>
   </div>
@@ -74,10 +79,10 @@
   <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center;">
     <div data-reveal>
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.60 0.14 285); margin-bottom: 18px;">Character</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; line-height: 1.5; color: oklch(0.24 0.10 285); margin-bottom: 28px;">深い紫と、<br>透き通る白。</h2>
+      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; line-height: 1.5; color: oklch(0.24 0.10 285); margin-bottom: 28px;">言葉も、しぐさも。<br>ルミナらしく。</h2>
       <div style="width: 36px; height: 1.5px; background: oklch(0.70 0.12 210); margin-bottom: 32px;"></div>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-bottom: 20px;">Luminaは、濃い紫の髪と透明感のある雰囲気を持つ、3D空間のキャラクターです。ただかわいいだけじゃなくて、3D空間の中で話したり、一緒に動いたりできる存在です。</p>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300;">かわいいけど、ただ甘いだけじゃない。少し静かで、でも確かにそこにいる。そんな距離感を、大切にしています。</p>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-bottom: 20px;">Lumina（ルミナ）は、深い紫の髪と星のアクセントが目印の、3D AIキャラクターです。会話と、目の前の景色と、その場での行動をつなぐ開発プロジェクトから生まれました。</p>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300;">声をかけたときの返事。周りのものへの気づき。目的に向かって動く姿。そのひとつひとつを、自然なやり取りにつなげたい。見た目のかわいさと、実際に関わる楽しさの両方を大切にしています。</p>
       <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;">
         <span style="padding: 5px 14px; background: oklch(0.93 0.04 285); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.44 0.12 285);">濃い紫髪</span>
         <span style="padding: 5px 14px; background: oklch(0.92 0.05 210); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.42 0.12 210);">水色の袖パネル</span>
@@ -96,8 +101,9 @@
 <section id="space" style="background: oklch(0.975 0.012 285); padding: 136px 72px;">
   <div style="max-width: 1240px; margin: 0 auto;">
     <div data-reveal style="margin-bottom: 68px;">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.60 0.14 285); margin-bottom: 18px;">3D Space</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285);">今、できること。</h2>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.60 0.14 285); margin-bottom: 18px;">Development</p>
+      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285);">見る。話す。自分で動く。</h2>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-top: 20px;">ルミナの体験を支える、三つの開発テーマ。現在は会話・視覚認識・自律移動を中心に、開発と検証を重ねています。</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
       <div data-reveal style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px oklch(0.50 0.10 285 / 0.10);">
@@ -105,8 +111,8 @@
           <img src="images/space-conversation.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 26px 26px 30px;">
-          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">3D空間で、話す。</h3>
-          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">3D空間の中で、Luminaと話せます。言葉を交わしながら、そこにいるような距離感を感じてほしいと思っています。</p>
+          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">言葉を、交わす。</h3>
+          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">話の流れをくみ取り、さまざまな話題に応える。返事を待つ時間も短くし、言葉のキャッチボールが自然に続く会話を目指します。</p>
         </div>
       </div>
       <div data-reveal data-delay="0.10s" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px oklch(0.50 0.10 285 / 0.10);">
@@ -114,8 +120,8 @@
           <img src="images/hero.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
         </div>
         <div style="padding: 26px 26px 30px;">
-          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">一緒に、動く。</h3>
-          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">Luminaは、3D空間の中で一緒に動いてくれます。「隣にいる」と感じられる、そういう距離感を大切にしています。</p>
+          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">周りに、気づく。</h3>
+          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">目の前には何があって、どんな状況なのか。見えているものを手がかりに周囲を理解し、その場に合った反応へつなげていきます。</p>
         </div>
       </div>
       <div data-reveal data-delay="0.20s" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px oklch(0.50 0.10 285 / 0.10);">
@@ -123,8 +129,8 @@
           <img src="images/space-gallery.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div style="padding: 26px 26px 30px;">
-          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">空間の中で、過ごす。</h3>
-          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">3D空間は、Luminaのいる場所です。ただそこで過ごすだけでも、何かが少し変わるかもしれません。</p>
+          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">自分で考え、動く。</h3>
+          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">目的の場所まで、どう進めばいいのか。周りの状況をもとに行動を選び、障害物があれば道を考え直す。そんな自律的な動きを検証しています。</p>
         </div>
       </div>
     </div>
@@ -136,7 +142,8 @@
   <div style="max-width: 1240px; margin: 0 auto;">
     <div data-reveal style="margin-bottom: 52px;">
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.60 0.14 285); margin-bottom: 18px;">Gallery</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285);">Lumina</h2>
+      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285);">いろいろな表情、いろいろなルミナ。</h2>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-top: 20px;">表情やポーズ、空間の中で過ごす姿をイラストで紹介します。</p>
     </div>
     <div data-reveal style="height: 460px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 36px oklch(0.50 0.10 285 / 0.14); margin-bottom: 18px;">
       <img src="images/pose-sheet.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover; object-position: center 22%;">
@@ -168,36 +175,36 @@
     </div>
     <div data-reveal data-delay="0.12s">
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.60 0.14 285); margin-bottom: 18px;">Roadmap</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285); margin-bottom: 16px;">これから。</h2>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; color: oklch(0.54 0.06 285); font-weight: 300; margin-bottom: 48px;">まだ始まったばかりです。これからの更新で、Luminaとできることが少しずつ増えていきます。</p>
+      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285); margin-bottom: 16px;">目指す姿へ、一歩ずつ。</h2>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; color: oklch(0.54 0.06 285); font-weight: 300; margin-bottom: 48px;">返事を待たせないこと。言葉や周りの状況を理解して、自分で行動できること。ルミナの開発では、この二つを大切にしています。<br><br>実際の動作を確かめながら、応答の速さと理解・行動の精度を磨いていきます。</p>
       <div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
           <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">3D Demo</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">3Dデモ体験</p>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">応答の速さ</p>
+            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">会話の流れを止めない、スムーズなやり取りへ。</p>
           </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">Coming Soon</span>
+          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">開発・検証中</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
           <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">Voice</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">音声機能</p>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">理解と自律行動</p>
+            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">周囲の状況に合わせて、行動を選べるように。</p>
           </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">Coming Soon</span>
+          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">開発・検証中</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
           <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">Gallery Update</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">ギャラリー拡張</p>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">3Dデモ</p>
+            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">ルミナとのやり取りを体験できる場へ。</p>
           </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">Coming Soon</span>
+          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">公開時期未定</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0;">
           <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">SNS</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">公式アカウント</p>
+            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">X</p>
+            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">制作者・お問い合わせ窓口：@hoshikuzukobo42</p>
           </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">Coming Soon</span>
+          <a href="https://x.com/hoshikuzukobo42" style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">窓口を見る</a>
         </div>
       </div>
     </div>
@@ -211,11 +218,11 @@
       <img src="images/sns-icon.png?v=outfit01-headsafe-v1" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid oklch(0.50 0.18 285);">
       <div>
         <p style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0.10em; color: white; margin-bottom: 5px;">LUMINA</p>
-        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 11px; color: oklch(0.70 0.08 285); font-weight: 300;">3D空間で話せるオリジナルキャラクター</p>
+        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 11px; color: oklch(0.70 0.08 285); font-weight: 300;">会話の先まで、一緒に。開発中の3D AIキャラクター。</p>
       </div>
     </div>
     <div style="text-align: right;">
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.64 0.08 285); font-weight: 300; margin-bottom: 8px;">SNS · Demo · Voice — <span style="font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: oklch(0.76 0.12 210);">Coming Soon</span></p>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.64 0.08 285); font-weight: 300; margin-bottom: 8px;">制作者・お問い合わせ：<a href="https://x.com/hoshikuzukobo42" style="font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: oklch(0.76 0.12 210);">X @hoshikuzukobo42</a></p>
       <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; margin-bottom: 12px;"><a href="guidelines.html" style="color: oklch(0.90 0.04 285); text-decoration: underline; text-underline-offset: 4px;">利用・二次創作ガイドライン</a></p>
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; color: oklch(0.48 0.06 285); letter-spacing: 0.05em;">© 2025 Lumina. All rights reserved.</p>
     </div>
@@ -254,4 +261,3 @@
 </script>
 </body>
 </html>
-
