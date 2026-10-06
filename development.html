@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>開発状況・FAQ｜Lumina（ルミナ）</title>
+  <meta name="description" content="Lumina（ルミナ）の開発状況とFAQ。テキスト応答の測定結果、理解・行動の試作、紹介映像と3D体験版の公開状況をご案内します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; background: #fcfaff; color: #312145; font-family: 'Noto Sans JP',sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-underline-offset: 4px; }
+    a:focus-visible,summary:focus-visible { outline: 3px solid #42a9c9; outline-offset: 5px; }
+    .skip { position: absolute; left: 20px; top: -100px; padding: 12px; background: white; z-index: 200; }
+    .skip:focus { top: 12px; }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px clamp(20px,6vw,72px); border-bottom: 1px solid #e9dff5; }
+    .brand { font-family: 'DM Sans',sans-serif; font-size: 19px; font-weight: 600; letter-spacing: .12em; color: #6331a4; text-decoration: none; }
+    .nav-back { font-size: 12px; color: #655472; white-space: nowrap; }
+    main { max-width: 1064px; margin: auto; padding: 78px 32px 96px; }
+    .eyebrow { margin: 0 0 18px; color: #6845a4; font-family: 'DM Sans',sans-serif; font-size: 11px; letter-spacing: .18em; }
+    h1 { margin: 0 0 26px; font-size: clamp(30px,5vw,48px); font-weight: 300; line-height: 1.5; letter-spacing: .01em; }
+    .lead { max-width: 730px; margin: 0; color: #655472; font-size: 15px; line-height: 2; }
+    .updated { margin: 24px 0 0; font-size: 12px; color: #756981; }
+    .toc { display: flex; flex-wrap: wrap; gap: 10px; margin: 34px 0 64px; }
+    .toc a,.button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 22px; border: 1px solid #d7c5ed; border-radius: 28px; text-decoration: none; font-size: 12px; color: #542792; background: white; }
+    .toc a:hover,.button:hover { background: #eee4fb; }
+    section { margin-top: 56px; }
+    .section-label { margin: 0 0 12px; font-family: 'DM Sans',sans-serif; color: #6845a4; font-size: 10px; letter-spacing: .2em; }
+    h2 { margin: 0 0 24px; font-size: clamp(23px,3.7vw,32px); line-height: 1.6; font-weight: 400; }
+    h3 { margin: 0 0 12px; font-size: 17px; font-weight: 500; line-height: 1.7; }
+    p { line-height: 1.95; }
+    .card { padding: clamp(22px,4vw,36px); border: 1px solid #e0d3f2; border-radius: 24px; background: white; box-shadow: 0 12px 40px #7850a409; }
+    .card p { margin: 0; color: #655472; font-size: 14px; }
+    .card p+p { margin-top: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; margin: 26px 0; }
+    .stat { padding: 10px 0 16px; border-bottom: 1px solid #e9dff5; }
+    .stat dt { color: #70627e; font-size: 12px; }
+    .stat dd { margin: 6px 0 0; font-family: 'DM Sans',sans-serif; font-size: clamp(28px,5vw,44px); font-weight: 400; color: #312145; }
+    .stat dd span { margin-left: 4px; font-family: 'Noto Sans JP',sans-serif; font-size: 12px; }
+    .note { padding: 18px 20px; border-radius: 14px; background: #f7f4fb; }
+    .conditions { margin: 22px 0; padding-left: 1.3em; font-size: 13px; line-height: 2; color: #655472; }
+    .conditions li+li { margin-top: 4px; }
+    .card .small { font-size: 12px; }
+    .status { display: inline-block; margin-bottom: 16px; padding: 5px 13px; border-radius: 20px; background: #eee7f8; color: #6331a4; font-size: 11px; }
+    .grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+    .faq { padding: 4px clamp(22px,4vw,36px); }
+    details+details { border-top: 1px solid #e9dff5; }
+    summary { padding: 23px 0; font-size: 14px; font-weight: 500; cursor: pointer; line-height: 1.8; }
+    .faq details p { padding: 0 0 24px; font-size: 13px; }
+    .closing { margin-top: 52px; }
+    .button.primary { color: white; background: #6331a4; border-color: #6331a4; }
+    .button.primary:hover { background: #542792; }
+    footer { padding: 32px; background: #251635; color: #d5c6e7; text-align: center; font-size: 11px; line-height: 1.9; }
+    footer p { margin: 0; }
+    footer a { color: #e9e0f6; }
+    @media(max-width:600px) { main { padding: 48px 20px 64px; } .toc { margin-bottom: 44px; } .grid { grid-template-columns: 1fr; } .stats { gap: 12px; } section { margin-top: 44px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">本文へ移動</a>
+  <nav class="nav" aria-label="メインナビゲーション">
+    <a class="brand" href="index.html" aria-label="Lumina トップページ">LUMINA</a>
+    <a class="nav-back" href="index.html">← トップへ戻る</a>
+  </nav>
+  <main id="main">
+    <header>
+      <p class="eyebrow">DEVELOPMENT · LUMINA</p>
+      <h1>ルミナの今と、これから。</h1>
+      <p class="lead">Lumina（ルミナ）は、会話と3D空間での行動をつなぐAIキャラクター開発プロジェクトです。言葉を交わし、周囲を理解し、その場に合った行動へつなげることを目指して、試作と検証を重ねています。</p>
+      <p class="updated">開発状況：2026年10月6日時点 · 試作・検証中</p>
+      <nav class="toc" aria-label="このページの内容">
+        <a href="#response">応答速度</a>
+        <a href="#action">理解と行動</a>
+        <a href="#release">公開について</a>
+        <a href="#faq">よくある質問</a>
+      </nav>
+    </header>
+    <section id="response" aria-labelledby="response-title">
+      <p class="section-label">01 · RESPONSE</p>
+      <h2 id="response-title">返事を待つ時間を、短く。</h2>
+      <div class="card">
+        <p>Lumina Nextで短い日本語の質問を送り、テキストの返答が完了するまでの時間を測定しました。20回の測定では、15回が1秒台、5回が約7秒でした。</p>
+        <dl class="stats">
+          <div class="stat"><dt>中央値</dt><dd>1.35<span>秒</span></dd></div>
+          <div class="stat"><dt>最短</dt><dd>1.07<span>秒</span></dd></div>
+          <div class="stat"><dt>最長</dt><dd>7.73<span>秒</span></dd></div>
+        </dl>
+        <h3>今回の測定条件</h3>
+        <ul class="conditions">
+          <li>測定日時：2026年10月6日 22:34〜22:36（日本時間）</li>
+          <li>Lumina Nextに、短い日本語の質問5種類を4巡、同じ会話内で送信した計20回</li>
+          <li>質問の送信から、テキストの返答をすべて受信するまでを測定</li>
+          <li>音声認識・音声合成・音声再生の時間は含まない</li>
+        </ul>
+        <p class="note small">1.35秒は今回の20回の中央値です。すべての返答がこの速さになることを保証するものではなく、質問内容や会話の履歴、実行条件によって変わります。</p>
+        <p class="small">トップページでは、この実測データの待ち時間を再現できます。保存済みの時間を使うギミックで、新しいAIの返答を生成するものではありません。</p>
+        <p><a class="button" href="index.html#response-demo">実測の待ち時間を体験する →</a></p>
+      </div>
+    </section>
+    <section id="action" aria-labelledby="action-title">
+      <p class="section-label">02 · UNDERSTANDING &amp; ACTION</p>
+      <h2 id="action-title">会話を、その先の行動へ。</h2>
+      <div class="card">
+        <span class="status">試作・検証中</span>
+        <p>開発記録には、会話をきっかけに周囲を探し、ソファに座るまでをつないだ一連の試作があります。</p>
+        <p>一方で、記録と実際の映像を照らし合わせる確認や、行動の確かさ・自然さの検証は残っています。歩行についても、参考となる動きの調査を踏まえて改善している段階です。</p>
+        <p>返事ができることだけでなく、周りの状況を理解して、自然に動けること。その両方を、実際の動作を確かめながら磨いていきます。</p>
+      </div>
+    </section>
+    <section id="release" aria-labelledby="release-title">
+      <p class="section-label">03 · RELEASE</p>
+      <h2 id="release-title">公開に向けて。</h2>
+      <div class="grid">
+        <div class="card"><span class="status">準備中</span><h3>紹介映像</h3><p>ルミナの会話や動きを伝える紹介映像を準備しています。</p></div>
+        <div class="card"><span class="status">公開時期未定</span><h3>3D体験版</h3><p>実際にルミナと対話できる3D体験版の公開時期は、まだ決まっていません。</p></div>
+      </div>
+    </section>
+    <section id="faq" aria-labelledby="faq-title">
+      <p class="section-label">04 · FAQ</p>
+      <h2 id="faq-title">よくある質問</h2>
+      <div class="card faq">
+        <details><summary>今すぐルミナとAI会話できますか？</summary><p>現在公開しているギミックは、実測した待ち時間の再現です。入力に応じてAIが新しい返答を生成するものではありません。実際に対話できる3D体験版の公開時期は未定です。</p></details>
+        <details><summary>返答は必ず1.35秒で返ってきますか？</summary><p>1.35秒は、今回の条件で行った20回の測定の中央値です。最短は1.07秒、最長は7.73秒でした。質問内容や会話の履歴、実行条件によって変わります。</p></details>
+        <details><summary>音声での会話も同じ速さですか？</summary><p>音声での応答時間は、まだ測定していません。今回の数値には音声認識・音声合成・音声再生の時間を含まないため、そのまま音声会話の速さを示すものではありません。</p></details>
+        <details><summary>キャラクターの動きは完成していますか？</summary><p>現在は試作・検証中です。会話から行動につなげる試作を進めており、行動の確かさや自然さを確認しています。歩行も参考となる動きの調査を踏まえ、改善している段階です。</p></details>
+      </div>
+    </section>
+    <div class="closing"><a class="button primary" href="index.html">← トップページへ戻る</a></div>
+  </main>
+  <footer><p>LUMINA · 会話の先まで、一緒に。</p><p><a href="guidelines.html">利用・二次創作ガイドライン</a></p></footer>
+</body>
+</html>
