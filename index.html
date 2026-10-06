@@ -182,7 +182,7 @@
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
           <div>
             <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">応答の速さ</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">短文テキストの応答を実測。<a href="#response-demo" style="text-decoration: underline; text-underline-offset: 3px;">待ち時間を体験する</a></p>
+            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">短文テキストの応答を実測。<a href="#response-demo" style="text-decoration: underline; text-underline-offset: 3px;">応答速度の実測を見る</a></p>
           </div>
           <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">実測データ公開</span>
         </div>
@@ -226,6 +226,9 @@
     #response-demo .bench-stat { padding: 12px 6px; border-bottom: 1px solid #e9dff5; }
     #response-demo .bench-stat small { display: block; color: #70627e; font-size: 11px; }
     #response-demo .bench-stat strong { display: block; margin-top: 4px; font-family: 'DM Sans',sans-serif; font-size: clamp(23px,4vw,36px); font-weight: 500; }
+    #response-demo #bench-panel[hidden] { display: none !important; }
+    #response-demo #bench-toggle { background: #6331a4; color: white; }
+    #response-demo #bench-panel { margin-top: 22px; }
     #response-demo .bench-bubble { min-height: 112px; padding: 20px; background: #f7f4fb; border-radius: 18px 18px 18px 4px; border: 1px solid #ede5f4; }
     #response-demo .bench-bubble strong { display: block; color: #6232a1; font-size: 13px; margin-bottom: 8px; }
     #response-demo .bench-clock { margin: 16px 0 8px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12px; color: #655472; }
@@ -252,13 +255,15 @@
   <div class="bench-inner">
     <p class="bench-label">RESPONSE EXPERIENCE · LUMINA NEXT</p>
     <h2 id="response-demo-title">返事までの時間を、体感。</h2>
-    <p class="bench-intro">数字の先にある「待ち時間」を、小さな体験に。実測した20ターンから選んだ時間で、吹き出しが切り替わります。</p>
+    <p class="bench-intro">数字の先にある「待ち時間」を、小さな体験に。ボタンを押すと、実測した20ターンの待ち時間を再現する体験が開きます。</p>
     <div class="bench-card">
       <div class="bench-stats">
         <div class="bench-stat"><small>中央値</small><strong>1.35<span style="font-size:13px"> 秒</span></strong></div>
         <div class="bench-stat"><small>最短</small><strong>1.07<span style="font-size:13px"> 秒</span></strong></div>
         <div class="bench-stat"><small>最長</small><strong>7.73<span style="font-size:13px"> 秒</span></strong></div>
       </div>
+      <button type="button" id="bench-toggle" aria-expanded="false" aria-controls="bench-panel" disabled>待ち時間を体験する</button>
+      <div id="bench-panel" hidden>
       <div class="bench-bubble"><strong>✦ 実測データの再現</strong><p id="bench-status" role="status" aria-live="polite">ボタンを押して、文章が返ってくるまでの時間を体験してください。</p></div>
       <div class="bench-clock"><span id="bench-selected">20ターン・すべて成功</span><span id="bench-time" aria-hidden="true">0.00 秒</span></div>
       <div class="bench-track" aria-hidden="true"><div id="bench-progress"></div></div>
@@ -283,6 +288,7 @@
         </ul>
         <p class="bench-raw">順番ごとの秒数：7.727 / 1.197 / 1.173 / 1.594 / 1.463 / 1.320 / 1.073 / 6.966 / 1.171 / 1.473 / 1.317 / 7.181 / 1.229 / 1.207 / 1.575 / 7.186 / 1.375 / 1.182 / 1.197 / 7.200</p>
       </details>
+      </div>
     </div>
   </div>
   <script>
@@ -296,6 +302,8 @@
     const progress = root.querySelector('#bench-progress');
     const samples = root.querySelector('#bench-samples');
     const resetButton = root.querySelector('#bench-reset');
+    const toggleButton = root.querySelector('#bench-toggle');
+    const panel = root.querySelector('#bench-panel');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let running = false;
     let frame = 0;
@@ -352,7 +360,20 @@
     root.querySelector('#bench-fast').addEventListener('click',() => run(timings.indexOf(Math.min(...timings))));
     root.querySelector('#bench-slow').addEventListener('click',() => run(timings.indexOf(Math.max(...timings))));
     resetButton.addEventListener('click',reset);
-    window.addEventListener('pagehide',reset);
+    const closePanel = () => {
+      reset();
+      panel.hidden = true;
+      toggleButton.setAttribute('aria-expanded','false');
+      toggleButton.textContent = '待ち時間を体験する';
+    };
+    toggleButton.disabled = false;
+    toggleButton.addEventListener('click',() => {
+      if (!panel.hidden) { closePanel(); return; }
+      panel.hidden = false;
+      toggleButton.setAttribute('aria-expanded','true');
+      toggleButton.textContent = '体験を閉じる';
+    });
+    window.addEventListener('pagehide',closePanel);
     reset();
   })();
   </script>
