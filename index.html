@@ -182,9 +182,9 @@
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
           <div>
             <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">応答の速さ</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">会話の流れを止めない、スムーズなやり取りへ。</p>
+            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">短文テキストの応答を実測。<a href="#response-demo" style="text-decoration: underline; text-underline-offset: 3px;">待ち時間を体験する</a></p>
           </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">開発・検証中</span>
+          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">実測データ公開</span>
         </div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
           <div>
@@ -210,6 +210,152 @@
       </div>
     </div>
   </div>
+</section>
+
+<!-- Lumina Next measured response experience -->
+<section id="response-demo" aria-labelledby="response-demo-title">
+  <style>
+    #response-demo { padding: 80px clamp(20px,6vw,72px); background: #f6f1ff; color: #312145; font-family: 'Noto Sans JP',sans-serif; scroll-margin-top: 80px; }
+    #response-demo .bench-inner { max-width: 1000px; margin: auto; min-width: 0; }
+    #response-demo .bench-label { color: #6845a4; font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
+    #response-demo h2 { font-weight: 400; font-size: clamp(24px,4vw,38px); line-height: 1.5; }
+    #response-demo p { font-size: 13px; line-height: 1.9; }
+    #response-demo .bench-intro { margin: 16px 0 24px; max-width: 650px; }
+    #response-demo .bench-card { background: white; border: 1px solid #e0d3f2; border-radius: 24px; padding: clamp(18px,4vw,36px); box-shadow: 0 12px 40px #7850a412; }
+    #response-demo .bench-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-bottom: 24px; }
+    #response-demo .bench-stat { padding: 12px 6px; border-bottom: 1px solid #e9dff5; }
+    #response-demo .bench-stat small { display: block; color: #70627e; font-size: 11px; }
+    #response-demo .bench-stat strong { display: block; margin-top: 4px; font-family: 'DM Sans',sans-serif; font-size: clamp(23px,4vw,36px); font-weight: 500; }
+    #response-demo .bench-bubble { min-height: 112px; padding: 20px; background: #f7f4fb; border-radius: 18px 18px 18px 4px; border: 1px solid #ede5f4; }
+    #response-demo .bench-bubble strong { display: block; color: #6232a1; font-size: 13px; margin-bottom: 8px; }
+    #response-demo .bench-clock { margin: 16px 0 8px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12px; color: #655472; }
+    #response-demo #bench-time { font-variant-numeric: tabular-nums; }
+    #response-demo .bench-track { height: 6px; background: #eae2f3; border-radius: 6px; overflow: hidden; }
+    #response-demo #bench-progress { height: 100%; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg,#a588db,#59bad5); }
+    #response-demo .bench-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    #response-demo button { cursor: pointer; font: inherit; font-size: 12px; min-height: 44px; padding: 10px 16px; border-radius: 24px; border: 1px solid #d7c5ed; color: #542792; background: white; }
+    #response-demo #bench-random { background: #6331a4; color: white; border-color: #6331a4; }
+    #response-demo button:hover:not(:disabled) { background: #eee4fb; color: #432174; }
+    #response-demo button:focus-visible, #response-demo summary:focus-visible { outline: 3px solid #42a9c9; outline-offset: 3px; }
+    #response-demo button:disabled { cursor: default; opacity: .45; }
+    #response-demo .bench-samples { display: grid; grid-template-columns: repeat(10,minmax(0,1fr)); gap: 7px; margin: 14px 0; }
+    #response-demo .bench-samples button { min-width: 0; min-height: 36px; padding: 7px 0; border-radius: 9px; font-variant-numeric: tabular-nums; background: #efe7fa; }
+    #response-demo .bench-samples button[data-slow="true"] { background: #e0f2f7; border-color: #abd7e1; }
+    #response-demo .bench-samples button[aria-current="true"] { outline: 2px solid #6331a4; outline-offset: 1px; }
+    #response-demo .bench-note { margin-top: 18px; color: #655472; font-size: 12px; }
+    #response-demo details { margin-top: 24px; border-top: 1px solid #e0d3f2; padding-top: 18px; font-size: 12px; line-height: 1.9; }
+    #response-demo summary { cursor: pointer; font-weight: 500; }
+    #response-demo details ul { padding-left: 20px; margin-top: 12px; }
+    #response-demo .bench-raw { overflow-wrap: anywhere; margin-top: 12px; font-size: 11px; }
+    @media(max-width: 540px) { #response-demo .bench-samples { grid-template-columns: repeat(5,minmax(0,1fr)); } #response-demo .bench-controls button { flex: 1 1 125px; } }
+  </style>
+  <div class="bench-inner">
+    <p class="bench-label">RESPONSE EXPERIENCE · LUMINA NEXT</p>
+    <h2 id="response-demo-title">返事までの時間を、体感。</h2>
+    <p class="bench-intro">数字の先にある「待ち時間」を、小さな体験に。実測した20ターンから選んだ時間で、吹き出しが切り替わります。</p>
+    <div class="bench-card">
+      <div class="bench-stats">
+        <div class="bench-stat"><small>中央値</small><strong>1.35<span style="font-size:13px"> 秒</span></strong></div>
+        <div class="bench-stat"><small>最短</small><strong>1.07<span style="font-size:13px"> 秒</span></strong></div>
+        <div class="bench-stat"><small>最長</small><strong>7.73<span style="font-size:13px"> 秒</span></strong></div>
+      </div>
+      <div class="bench-bubble"><strong>✦ 実測データの再現</strong><p id="bench-status" role="status" aria-live="polite">ボタンを押して、文章が返ってくるまでの時間を体験してください。</p></div>
+      <div class="bench-clock"><span id="bench-selected">20ターン・すべて成功</span><span id="bench-time" aria-hidden="true">0.00 秒</span></div>
+      <div class="bench-track" aria-hidden="true"><div id="bench-progress"></div></div>
+      <div class="bench-controls">
+        <button type="button" id="bench-random" data-bench-run disabled>1回試してみる</button>
+        <button type="button" id="bench-fast" data-bench-run disabled>いちばん速い回</button>
+        <button type="button" id="bench-slow" data-bench-run disabled>いちばん遅い回</button>
+        <button type="button" id="bench-reset" disabled>リセット</button>
+      </div>
+      <p class="bench-note">各回を選んで比べる：15回は1秒台、5回は約7秒。青いマスが約7秒の回です。</p>
+      <div id="bench-samples" class="bench-samples" aria-label="計測した20ターンから選択"></div>
+      <p class="bench-note">これは保存済みの待ち時間を使ったデモです。AIへ質問を送信せず、画面の文は実際の生成回答ではありません。音声の応答時間も含みません。端末の描画状況で再現時間に誤差が出ることがあります。</p>
+      <noscript><p>体験ボタンにはJavaScriptが必要です。測定値と条件はそのまま読めます。</p></noscript>
+      <details><summary>測定条件と20ターンのデータを見る</summary>
+        <ul>
+          <li>測定：2026年10月6日 22:34〜22:36（日本時間）</li>
+          <li>Lumina Nextの短文テキストAPI。送信から文章全体の受信までを測定</li>
+          <li>同じ会話で日本語の短い質問5種類を4巡。文脈の蓄積・履歴整理を含む20ターン</li>
+          <li>返答は4〜20文字。成功20件・失敗0件。音声生成・動作連携なし</li>
+          <li>モデル：bonsai2-27b-pq2_0。初回7.73秒。コールド起動かは未確認</li>
+          <li>95パーセンタイル：7.20秒（nearest-rank）。20件の小規模測定で、一般的な性能保証ではありません</li>
+        </ul>
+        <p class="bench-raw">順番ごとの秒数：7.727 / 1.197 / 1.173 / 1.594 / 1.463 / 1.320 / 1.073 / 6.966 / 1.171 / 1.473 / 1.317 / 7.181 / 1.229 / 1.207 / 1.575 / 7.186 / 1.375 / 1.182 / 1.197 / 7.200</p>
+      </details>
+    </div>
+  </div>
+  <script>
+  (() => {
+    'use strict';
+    const root = document.getElementById('response-demo');
+    const timings = [7726.878,1197.009209,1172.785709,1594.192667,1463.140875,1320.187209,1073.137208,6966.390042,1170.753083,1473.091584,1316.955208,7181.084042,1228.756625,1207.430709,1574.695750,7186.151584,1374.996250,1182.253958,1196.693417,7199.699667];
+    const status = root.querySelector('#bench-status');
+    const time = root.querySelector('#bench-time');
+    const selected = root.querySelector('#bench-selected');
+    const progress = root.querySelector('#bench-progress');
+    const samples = root.querySelector('#bench-samples');
+    const resetButton = root.querySelector('#bench-reset');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let running = false;
+    let frame = 0;
+    const seconds = ms => (ms / 1000).toFixed(2);
+    const lock = value => root.querySelectorAll('[data-bench-run]').forEach(button => { button.disabled = value; });
+    const reset = () => {
+      cancelAnimationFrame(frame);
+      running = false;
+      frame = 0;
+      lock(false);
+      resetButton.disabled = true;
+      time.textContent = '0.00 秒';
+      selected.textContent = '20ターン・すべて成功';
+      progress.style.transform = 'scaleX(0)';
+      status.textContent = 'ボタンを押して、文章が返ってくるまでの時間を体験してください。';
+      samples.querySelectorAll('button').forEach(button => button.removeAttribute('aria-current'));
+    };
+    const run = index => {
+      if (running || !Number.isInteger(index) || index < 0 || index >= timings.length) return;
+      running = true;
+      lock(true);
+      resetButton.disabled = false;
+      const duration = timings[index];
+      const start = performance.now();
+      selected.textContent = '第' + (index + 1) + '回の再現 · 実測 ' + seconds(duration) + ' 秒';
+      status.textContent = '返答を待つ時間を再現しています…';
+      time.textContent = '0.00 秒';
+      progress.style.transform = 'scaleX(0)';
+      samples.querySelectorAll('button').forEach((button, i) => { if (i === index) button.setAttribute('aria-current','true'); else button.removeAttribute('aria-current'); });
+      const tick = now => {
+        if (!running) return;
+        const elapsed = Math.min(Math.max(now - start, 0), duration);
+        time.textContent = seconds(elapsed) + ' 秒';
+        if (!reducedMotion.matches || elapsed === duration) progress.style.transform = 'scaleX(' + (elapsed / duration) + ')';
+        if (elapsed < duration) { frame = requestAnimationFrame(tick); return; }
+        running = false;
+        frame = 0;
+        lock(false);
+        status.textContent = '✦ この回は ' + seconds(duration) + ' 秒で文章全体を受信しました。（実測の再現）';
+      };
+      frame = requestAnimationFrame(tick);
+    };
+    timings.forEach((duration, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = String(index + 1);
+      button.setAttribute('data-bench-run','');
+      button.setAttribute('data-slow',String(duration >= 6000));
+      button.setAttribute('aria-label','第' + (index + 1) + '回、' + seconds(duration) + '秒を再現');
+      button.addEventListener('click',() => run(index));
+      samples.appendChild(button);
+    });
+    root.querySelector('#bench-random').addEventListener('click',() => run(Math.floor(Math.random() * timings.length)));
+    root.querySelector('#bench-fast').addEventListener('click',() => run(timings.indexOf(Math.min(...timings))));
+    root.querySelector('#bench-slow').addEventListener('click',() => run(timings.indexOf(Math.max(...timings))));
+    resetButton.addEventListener('click',reset);
+    window.addEventListener('pagehide',reset);
+    reset();
+  })();
+  </script>
 </section>
 
 <!-- ─── Footer ────────────────────────────────────────── -->
