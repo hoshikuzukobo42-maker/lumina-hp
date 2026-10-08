@@ -40,39 +40,9 @@
       footer > div { flex-direction: column; align-items: flex-start !important; gap: 24px !important; }
       footer > div > div:last-child { text-align: left !important; }
     }
-
-/* Trial recording: scoped player styles. */
-.demo-video-section { padding: 64px clamp(20px,6vw,72px); background: #f7f3fc; scroll-margin-top: 100px; }
-.demo-video-inner { max-width: 1064px; margin: 0 auto; }
-.demo-video-section h2 { color: #312145; font-size: clamp(24px,4vw,36px); font-weight: 400; line-height: 1.6; margin: 0 0 16px; }
-.demo-video-section .demo-video-intro { color: #655472; font-size: 14px; line-height: 1.95; margin: 0 0 22px; }
-.demo-recording { margin: 24px 0 0; min-width: 0; }
-.demo-recording video { display: block; width: 100%; max-width: 960px; height: auto; aspect-ratio: 8 / 5; border-radius: 16px; background: #251635; }
-.demo-recording figcaption { color: #655472; font-size: 13px; line-height: 1.95; margin-top: 18px; }
-.demo-recording figcaption p { margin: 0 0 12px; }
-.demo-watch-link { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid #d7c5ed; border-radius: 24px; color: #542792; background: white; text-decoration: none; font-size: 13px; line-height: 1.6; }
-.demo-watch-link:focus-visible { outline: 3px solid #23829c; outline-offset: 4px; }
-@media (max-width: 600px) { .demo-video-section { padding: 44px 20px; } .demo-recording video { border-radius: 12px; } }
   </style>
   <meta name="google-site-verification" content="9dIVVuB6OeoLTcx0quEehQUdjyuX92ICu6KX9doKSK4" />
 
-  <style id="development-progress-styles">
-    #development-progress{padding:64px clamp(20px,6vw,72px);background:#f0eafa;color:#302140;font-family:'Noto Sans JP',sans-serif;scroll-margin-top:88px}
-    #development-progress .progress-inner{max-width:1240px;margin:auto}
-    #development-progress .progress-kicker{font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;color:#6845a4;margin-bottom:12px}
-    #development-progress h2{font-size:clamp(25px,4vw,36px);font-weight:400;line-height:1.5}
-    #development-progress .progress-intro{max-width:780px;margin:14px 0 26px;font-size:14px;line-height:1.9;color:#59496b}
-    #development-progress .progress-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-    #development-progress article{background:#fff;border:1px solid #ded1ee;border-radius:20px;padding:26px;min-width:0}
-    #development-progress .progress-state{display:inline-block;padding:5px 10px;border-radius:14px;background:#efe7fa;color:#57318b;font-size:11px;line-height:1.5}
-    #development-progress h3{font-size:19px;font-weight:500;margin:16px 0 10px}
-    #development-progress article p{font-size:13px;line-height:1.9;color:#5c5068}
-    #development-progress .progress-limit{margin-top:12px;padding-top:12px;border-top:1px solid #eee7f6}
-    #development-progress .progress-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:24px;padding:12px 24px;border-radius:30px;background:#60319c;color:#fff;font-size:13px}
-    #development-progress .progress-note{margin-top:16px;font-size:12px;line-height:1.8;color:#655472}
-    .hero-update{display:inline-block;margin:0 0 16px;padding:7px 13px;border:1px solid #cdb9e4;border-radius:20px;background:#fff9;font-family:'Noto Sans JP',sans-serif;font-size:11px;line-height:1.6;color:#583081}
-    @media(max-width:760px){#development-progress .progress-grid{grid-template-columns:1fr}#development-progress{padding-top:40px;padding-bottom:40px}#development-progress article{padding:22px}#development-progress .progress-link{width:100%}}
-  </style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -82,9 +52,9 @@
   <span style="font-family: 'DM Sans', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.40 0.22 285);">LUMINA</span>
   <div style="display: flex; gap: 36px;">
     <a href="#about" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">About</a>
-    <a href="#space" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Development</a>
+    <a href="development.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Development</a>
     <a href="#gallery" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Gallery</a>
-    <a href="#roadmap" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Roadmap</a>
+    <a href="#roadmap" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Contact</a>
   </div>
 </nav>
 
@@ -95,7 +65,6 @@
   <div style="position: absolute; inset: 0; background: linear-gradient(to right, oklch(0.985 0.008 285 / 0.90) 0%, oklch(0.985 0.008 285 / 0.68) 30%, oklch(0.985 0.008 285 / 0.12) 58%, transparent 72%); pointer-events: none;"></div>
   <div style="position: absolute; inset: 0; display: flex; align-items: center; padding: 0 72px;">
     <div style="position: relative; z-index: 2; max-width: 500px; padding-top: 64px;">
-      <a class="hero-update" href="#development-progress">10月8日更新 · 開発の現在地を見る ↓</a>
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: oklch(0.55 0.14 285); font-weight: 500; margin-bottom: 22px; animation: heroIn 0.7s ease both;">3D AI Character Project</p>
       <h1 style="font-family: 'DM Sans', sans-serif; font-size: clamp(72px, 7.5vw, 112px); font-weight: 300; letter-spacing: 0.015em; color: oklch(0.24 0.12 285); line-height: 0.93; margin-bottom: 32px; animation: heroIn 0.75s 0.08s ease both;">Lumina<span style="display: block; margin-top: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(15px, 1.6vw, 18px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.7; overflow-wrap: anywhere;">（ルミナ）｜3D AIキャラクター開発プロジェクト</span></h1>
       <div style="width: 44px; height: 1.5px; background: linear-gradient(to right, oklch(0.68 0.14 210), oklch(0.58 0.14 285)); margin-bottom: 28px; animation: heroIn 0.75s 0.16s ease both;"></div>
@@ -106,7 +75,7 @@
       </div>
       <div style="display: flex; gap: 14px; margin-top: 48px; animation: heroIn 0.75s 0.38s ease both;">
         <a href="#about" style="padding: 13px 30px; background: oklch(0.40 0.22 285); color: white; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">ルミナを知る</a>
-        <a href="development.html" style="padding: 12px 28px; border: 1.5px solid oklch(0.72 0.12 285); color: oklch(0.40 0.22 285); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">開発状況・詳しく見る</a>
+        <a href="development.html" style="padding: 12px 28px; border: 1.5px solid oklch(0.72 0.12 285); color: oklch(0.40 0.22 285); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">動画・開発状況</a>
       </div>
     </div>
   </div>
@@ -117,59 +86,6 @@
   </div>
 </section>
 
-
-<section id="development-progress" aria-labelledby="development-progress-title">
-  <div class="progress-inner">
-    <p class="progress-kicker">DEVELOPMENT UPDATE · <time datetime="2026-10-08">2026.10.08</time></p>
-    <h2 id="development-progress-title">ルミナの開発は、ここまで。</h2>
-    <p class="progress-intro">会話と動きを、ひとつずつ確かめながら。試作・検証できたことと、これから確認することをお伝えします。</p>
-    <div class="progress-grid">
-      <article>
-        <span class="progress-state">試作・隔離環境で検証</span>
-        <h3>会話の診断</h3>
-        <p>会話の履歴や処理の状態を調べる診断機能を試作し、隔離した環境で検証しました。</p>
-        <p class="progress-limit">次の確認：本体への組み込み、音声との連携、実機での動作。</p>
-      </article>
-      <article>
-        <span class="progress-state">保存データを再解析</span>
-        <h3>歩行の評価</h3>
-        <p>保存済みの歩行データを共通の足裏評価基準で再解析し、数値を検算しました。</p>
-        <p class="progress-limit">次の確認：連続した停止・旋回と、実機での自然な動き。</p>
-      </article>
-      <article>
-        <span class="progress-state">収録当時の試作映像</span>
-        <h3>試作動画と3D体験</h3>
-        <p>会話から周囲の探索、ソファへの着座までをつないだ試作を、録画で紹介します。</p>
-        <p class="progress-limit">動画は9月27日収録の試作です。対話型3D体験は未公開で、公開時期は未定です。</p>
-        <a class="demo-watch-link" href="#demo-video">試作動画を見る（無音）</a>
-      </article>
-    </div>
-    <a class="progress-link" href="development.html#development-log">開発ログと確認できた範囲を見る →</a>
-    <p class="progress-note">掲載内容は開発の進捗です。完成版の機能や、実機での動作を保証するものではありません。</p>
-  </div>
-</section>
-
-<section id="demo-video" class="demo-video-section" aria-labelledby="demo-video-title">
-  <div class="demo-video-inner">
-    <h2 id="demo-video-title">会話のあと、ソファへ。</h2>
-    <p class="demo-video-intro">LuminaSkyで収録した、会話・視覚探索・歩行・着座の試作記録です。再生ボタンから無音の動画をご覧いただけます。</p>
-    <figure class="demo-recording">
-      <video controls muted playsinline preload="none" width="960" height="600"
-             poster="lumina-sky-20260927-poster.jpg"
-             aria-label="会話からソファ着座までのLuminaSky試作録画"
-             aria-describedby="top-demo-caption">
-        <source src="lumina-sky-20260927.mp4" type="video/mp4">
-        <a href="lumina-sky-20260927.mp4">無音の試作動画を開く</a>
-      </video>
-      <figcaption id="top-demo-caption">
-        <p><strong>2026年9月27日収録のLuminaSky試作デモ（無音・43.5秒）</strong><br>会話欄の返答後に周囲を探索し、ソファへ歩いて座る流れを録画しました。</p>
-        <p>全編を等速で収録した既存の圧縮コピーです。起動直後の描画と会話待ちも含みます。外観・動作・画面内の文字と数値は収録時点の試作版のものです。</p>
-        <p>現在のモデルの完成度や音声応答の速さを示す映像ではありません。Lumina Nextの20件のテキスト応答測定とは、時期も構成も異なります。</p>
-        <p><a class="demo-watch-link" href="lumina-sky-20260927.mp4">動画ファイルを直接開く（無音）</a></p>
-      </figcaption>
-    </figure>
-  </div>
-</section>
 
 <!-- ─── About ─────────────────────────────────────────── -->
 <section id="about" style="padding: 136px 72px;">
@@ -194,46 +110,6 @@
   </div>
 </section>
 
-<!-- ─── 3D Space ──────────────────────────────────────── -->
-<section id="space" style="background: oklch(0.975 0.012 285); padding: 136px 72px;">
-  <div style="max-width: 1240px; margin: 0 auto;">
-    <div data-reveal style="margin-bottom: 68px;">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.55 0.14 285); margin-bottom: 18px;">Development</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285);">見る。話す。自分で動く。</h2>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-top: 20px;">ルミナの体験を支える、三つの開発テーマ。現在は会話・視覚認識・自律移動を中心に、開発と検証を重ねています。</p>
-      <a href="development.html" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 24px; padding: 12px 28px; border: 1.5px solid oklch(0.72 0.12 285); border-radius: 40px; color: oklch(0.40 0.22 285); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; font-weight: 500;">開発状況・FAQを見る</a>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
-      <div data-reveal style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px oklch(0.50 0.10 285 / 0.10);">
-        <div style="aspect-ratio: 16/9; overflow: hidden;">
-          <img alt="" src="images/space-conversation.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="padding: 26px 26px 30px;">
-          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">言葉を、交わす。</h3>
-          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">話の流れをくみ取り、さまざまな話題に応える。返事を待つ時間も短くし、言葉のキャッチボールが自然に続く会話を目指します。</p>
-        </div>
-      </div>
-      <div data-reveal data-delay="0.10s" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px oklch(0.50 0.10 285 / 0.10);">
-        <div style="aspect-ratio: 16/9; overflow: hidden;">
-          <img alt="透明なパネルや星の装飾が浮かぶ明るい空間に立つルミナ" src="images/hero.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover; object-position: right center;">
-        </div>
-        <div style="padding: 26px 26px 30px;">
-          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">周りに、気づく。</h3>
-          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">目の前には何があって、どんな状況なのか。見えているものを手がかりに周囲を理解し、その場に合った反応へつなげていきます。</p>
-        </div>
-      </div>
-      <div data-reveal data-delay="0.20s" style="background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px oklch(0.50 0.10 285 / 0.10);">
-        <div style="aspect-ratio: 16/9; overflow: hidden;">
-          <img alt="" src="images/space-gallery.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
-        <div style="padding: 26px 26px 30px;">
-          <h3 style="font-family: 'Noto Sans JP', sans-serif; font-size: 19px; font-weight: 500; color: oklch(0.26 0.10 285); margin-bottom: 12px;">自分で考え、動く。</h3>
-          <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.95; color: oklch(0.50 0.06 285); font-weight: 300;">目的の場所まで、どう進めばいいのか。周りの状況をもとに行動を選び、障害物があれば道を考え直す。そんな自律的な動きを検証しています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─── Gallery ───────────────────────────────────────── -->
 <section id="gallery" style="padding: 136px 72px;">
@@ -265,38 +141,17 @@
   </div>
 </section>
 
-<!-- ─── Roadmap ───────────────────────────────────────── -->
+<!-- ─── Contact ───────────────────────────────────────── -->
 <section id="roadmap" style="background: oklch(0.975 0.012 285); padding: 136px 72px;">
   <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
     <div data-reveal style="display: flex; justify-content: center;">
       <img alt="" src="images/chibi.png?v=chibi-approved-20260913-v1" style="width: 100%; max-width: 280px; animation: floatY 4s ease-in-out infinite;">
     </div>
     <div data-reveal data-delay="0.12s">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.55 0.14 285); margin-bottom: 18px;">Roadmap</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285); margin-bottom: 16px;">目指す姿へ、一歩ずつ。</h2>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; color: oklch(0.54 0.06 285); font-weight: 300; margin-bottom: 48px;">返事を待たせないこと。言葉や周りの状況を理解して、自分で行動できること。ルミナの開発では、この二つを大切にしています。<br><br>実際の動作を確かめながら、応答の速さと理解・行動の精度を磨いていきます。</p>
+      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.55 0.14 285); margin-bottom: 18px;">Contact</p>
+      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285); margin-bottom: 16px;">お問い合わせ</h2>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; color: oklch(0.54 0.06 285); font-weight: 300; margin-bottom: 48px;">ルミナについてのお問い合わせは、制作者のXへ。</p>
       <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
-          <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">応答の速さ</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">短文テキストの応答を実測。<a href="#response-demo" style="text-decoration: underline; text-underline-offset: 3px;">応答速度の実測を見る</a></p>
-          </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">実測データ公開</span>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
-          <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">理解と自律行動</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">周囲の状況に合わせて、行動を選べるように。</p>
-          </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">開発・検証中</span>
-        </div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid oklch(0.88 0.04 285);">
-          <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">3Dデモ</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">ルミナとのやり取りを体験できる場へ。</p>
-          </div>
-          <span style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">公開時期未定</span>
-        </div>
         <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0;">
           <div>
             <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">X</p>
@@ -309,172 +164,6 @@
   </div>
 </section>
 
-<!-- Lumina Next measured response experience -->
-<section id="response-demo" aria-labelledby="response-demo-title">
-  <style>
-    #response-demo { padding: 80px clamp(20px,6vw,72px); background: #f6f1ff; color: #312145; font-family: 'Noto Sans JP',sans-serif; scroll-margin-top: 80px; }
-    #response-demo .bench-inner { max-width: 1000px; margin: auto; min-width: 0; }
-    #response-demo .bench-label { color: #6845a4; font-size: 11px; letter-spacing: .16em; margin-bottom: 14px; }
-    #response-demo h2 { font-weight: 400; font-size: clamp(24px,4vw,38px); line-height: 1.5; }
-    #response-demo p { font-size: 13px; line-height: 1.9; }
-    #response-demo .bench-intro { margin: 16px 0 24px; max-width: 650px; }
-    #response-demo .bench-card { background: white; border: 1px solid #e0d3f2; border-radius: 24px; padding: clamp(18px,4vw,36px); box-shadow: 0 12px 40px #7850a412; }
-    #response-demo .bench-stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-bottom: 24px; }
-    #response-demo .bench-stat { padding: 12px 6px; border-bottom: 1px solid #e9dff5; }
-    #response-demo .bench-stat small { display: block; color: #70627e; font-size: 11px; }
-    #response-demo .bench-stat strong { display: block; margin-top: 4px; font-family: 'DM Sans',sans-serif; font-size: clamp(23px,4vw,36px); font-weight: 500; }
-    #response-demo #bench-panel[hidden] { display: none !important; }
-    #response-demo #bench-toggle { background: #6331a4; color: white; }
-    #response-demo #bench-panel { margin-top: 22px; }
-    #response-demo .bench-bubble { min-height: 112px; padding: 20px; background: #f7f4fb; border-radius: 18px 18px 18px 4px; border: 1px solid #ede5f4; }
-    #response-demo .bench-bubble strong { display: block; color: #6232a1; font-size: 13px; margin-bottom: 8px; }
-    #response-demo .bench-clock { margin: 16px 0 8px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 12px; color: #655472; }
-    #response-demo #bench-time { font-variant-numeric: tabular-nums; }
-    #response-demo .bench-track { height: 6px; background: #eae2f3; border-radius: 6px; overflow: hidden; }
-    #response-demo #bench-progress { height: 100%; width: 100%; transform: scaleX(0); transform-origin: left; background: linear-gradient(90deg,#a588db,#59bad5); }
-    #response-demo .bench-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-    #response-demo button { cursor: pointer; font: inherit; font-size: 12px; min-height: 44px; padding: 10px 16px; border-radius: 24px; border: 1px solid #d7c5ed; color: #542792; background: white; }
-    #response-demo #bench-random { background: #6331a4; color: white; border-color: #6331a4; }
-    #response-demo button:hover:not(:disabled) { background: #eee4fb; color: #432174; }
-    #response-demo button:focus-visible, #response-demo summary:focus-visible { outline: 3px solid #23829c; outline-offset: 3px; }
-    #response-demo button:disabled { cursor: default; opacity: .45; }
-    #response-demo .bench-samples { display: grid; grid-template-columns: repeat(10,minmax(0,1fr)); gap: 7px; margin: 14px 0; }
-    #response-demo .bench-samples button { min-width: 0; min-height: 36px; padding: 7px 0; border-radius: 9px; font-variant-numeric: tabular-nums; background: #efe7fa; }
-    #response-demo .bench-samples button[data-slow="true"] { background: #e0f2f7; border-color: #abd7e1; }
-    #response-demo .bench-samples button[aria-current="true"] { outline: 2px solid #6331a4; outline-offset: 1px; }
-    #response-demo .bench-note { margin-top: 18px; color: #655472; font-size: 12px; }
-    #response-demo details { margin-top: 24px; border-top: 1px solid #e0d3f2; padding-top: 18px; font-size: 12px; line-height: 1.9; }
-    #response-demo summary { cursor: pointer; font-weight: 500; }
-    #response-demo details ul { padding-left: 20px; margin-top: 12px; }
-    #response-demo .bench-raw { overflow-wrap: anywhere; margin-top: 12px; font-size: 11px; }
-    @media(max-width: 540px) { #response-demo .bench-samples { grid-template-columns: repeat(5,minmax(0,1fr)); } #response-demo .bench-controls button { flex: 1 1 125px; } }
-  </style>
-  <div class="bench-inner">
-    <p class="bench-label">RESPONSE EXPERIENCE · LUMINA NEXT</p>
-    <h2 id="response-demo-title">返事までの時間を、体感。</h2>
-    <p class="bench-intro">数字の先にある「待ち時間」を、小さな体験に。ボタンを押すと、実測した20ターンの待ち時間を再現する体験が開きます。</p>
-    <div class="bench-card">
-      <div class="bench-stats">
-        <div class="bench-stat"><small>中央値</small><strong>1.35<span style="font-size:13px"> 秒</span></strong></div>
-        <div class="bench-stat"><small>最短</small><strong>1.07<span style="font-size:13px"> 秒</span></strong></div>
-        <div class="bench-stat"><small>最長</small><strong>7.73<span style="font-size:13px"> 秒</span></strong></div>
-      </div>
-      <button type="button" id="bench-toggle" aria-expanded="false" aria-controls="bench-panel" disabled>待ち時間を体験する</button>
-      <div id="bench-panel" hidden>
-      <div class="bench-bubble"><strong>✦ 実測データの再現</strong><p id="bench-status" role="status" aria-live="polite">ボタンを押して、文章が返ってくるまでの時間を体験してください。</p></div>
-      <div class="bench-clock"><span id="bench-selected">20ターン・すべて成功</span><span id="bench-time" aria-hidden="true">0.00 秒</span></div>
-      <div class="bench-track" aria-hidden="true"><div id="bench-progress"></div></div>
-      <div class="bench-controls">
-        <button type="button" id="bench-random" data-bench-run disabled>1回試してみる</button>
-        <button type="button" id="bench-fast" data-bench-run disabled>いちばん速い回</button>
-        <button type="button" id="bench-slow" data-bench-run disabled>いちばん遅い回</button>
-        <button type="button" id="bench-reset" disabled>リセット</button>
-      </div>
-      <p class="bench-note">各回を選んで比べる：15回は1秒台、5回は約7秒。青いマスが約7秒の回です。</p>
-      <div id="bench-samples" class="bench-samples" aria-label="計測した20ターンから選択"></div>
-      <p class="bench-note">これは保存済みの待ち時間を使ったデモです。AIへ質問を送信せず、画面の文は実際の生成回答ではありません。音声の応答時間も含みません。端末の描画状況で再現時間に誤差が出ることがあります。</p>
-      <noscript><p>体験ボタンにはJavaScriptが必要です。測定値と条件はそのまま読めます。</p></noscript>
-      <details><summary>測定条件と20ターンのデータを見る</summary>
-        <ul>
-          <li>測定：2026年10月6日 22:34〜22:36（日本時間）</li>
-          <li>Lumina Nextの短文テキストAPI。送信から文章全体の受信までを測定</li>
-          <li>同じ会話で日本語の短い質問5種類を4巡。文脈の蓄積・履歴整理を含む20ターン</li>
-          <li>返答は4〜20文字。成功20件・失敗0件。音声生成・動作連携なし</li>
-          <li>モデル：bonsai2-27b-pq2_0。初回7.73秒。コールド起動かは未確認</li>
-          <li>95パーセンタイル：7.20秒（nearest-rank）。20件の小規模測定で、一般的な性能保証ではありません</li>
-        </ul>
-        <p class="bench-raw">順番ごとの秒数：7.727 / 1.197 / 1.173 / 1.594 / 1.463 / 1.320 / 1.073 / 6.966 / 1.171 / 1.473 / 1.317 / 7.181 / 1.229 / 1.207 / 1.575 / 7.186 / 1.375 / 1.182 / 1.197 / 7.200</p>
-      </details>
-      </div>
-    </div>
-  </div>
-  <script>
-  (() => {
-    'use strict';
-    const root = document.getElementById('response-demo');
-    const timings = [7726.878,1197.009209,1172.785709,1594.192667,1463.140875,1320.187209,1073.137208,6966.390042,1170.753083,1473.091584,1316.955208,7181.084042,1228.756625,1207.430709,1574.695750,7186.151584,1374.996250,1182.253958,1196.693417,7199.699667];
-    const status = root.querySelector('#bench-status');
-    const time = root.querySelector('#bench-time');
-    const selected = root.querySelector('#bench-selected');
-    const progress = root.querySelector('#bench-progress');
-    const samples = root.querySelector('#bench-samples');
-    const resetButton = root.querySelector('#bench-reset');
-    const toggleButton = root.querySelector('#bench-toggle');
-    const panel = root.querySelector('#bench-panel');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let running = false;
-    let frame = 0;
-    const seconds = ms => (ms / 1000).toFixed(2);
-    const lock = value => root.querySelectorAll('[data-bench-run]').forEach(button => { button.disabled = value; });
-    const reset = () => {
-      cancelAnimationFrame(frame);
-      running = false;
-      frame = 0;
-      lock(false);
-      resetButton.disabled = true;
-      time.textContent = '0.00 秒';
-      selected.textContent = '20ターン・すべて成功';
-      progress.style.transform = 'scaleX(0)';
-      status.textContent = 'ボタンを押して、文章が返ってくるまでの時間を体験してください。';
-      samples.querySelectorAll('button').forEach(button => button.removeAttribute('aria-current'));
-    };
-    const run = index => {
-      if (running || !Number.isInteger(index) || index < 0 || index >= timings.length) return;
-      running = true;
-      lock(true);
-      resetButton.disabled = false;
-      const duration = timings[index];
-      const start = performance.now();
-      selected.textContent = '第' + (index + 1) + '回の再現 · 実測 ' + seconds(duration) + ' 秒';
-      status.textContent = '返答を待つ時間を再現しています…';
-      time.textContent = '0.00 秒';
-      progress.style.transform = 'scaleX(0)';
-      samples.querySelectorAll('button').forEach((button, i) => { if (i === index) button.setAttribute('aria-current','true'); else button.removeAttribute('aria-current'); });
-      const tick = now => {
-        if (!running) return;
-        const elapsed = Math.min(Math.max(now - start, 0), duration);
-        time.textContent = seconds(elapsed) + ' 秒';
-        if (!reducedMotion.matches || elapsed === duration) progress.style.transform = 'scaleX(' + (elapsed / duration) + ')';
-        if (elapsed < duration) { frame = requestAnimationFrame(tick); return; }
-        running = false;
-        frame = 0;
-        lock(false);
-        status.textContent = '✦ この回は ' + seconds(duration) + ' 秒で文章全体を受信しました。（実測の再現）';
-      };
-      frame = requestAnimationFrame(tick);
-    };
-    timings.forEach((duration, index) => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.textContent = String(index + 1);
-      button.setAttribute('data-bench-run','');
-      button.setAttribute('data-slow',String(duration >= 6000));
-      button.setAttribute('aria-label','第' + (index + 1) + '回、' + seconds(duration) + '秒を再現');
-      button.addEventListener('click',() => run(index));
-      samples.appendChild(button);
-    });
-    root.querySelector('#bench-random').addEventListener('click',() => run(Math.floor(Math.random() * timings.length)));
-    root.querySelector('#bench-fast').addEventListener('click',() => run(timings.indexOf(Math.min(...timings))));
-    root.querySelector('#bench-slow').addEventListener('click',() => run(timings.indexOf(Math.max(...timings))));
-    resetButton.addEventListener('click',reset);
-    const closePanel = () => {
-      reset();
-      panel.hidden = true;
-      toggleButton.setAttribute('aria-expanded','false');
-      toggleButton.textContent = '待ち時間を体験する';
-    };
-    toggleButton.disabled = false;
-    toggleButton.addEventListener('click',() => {
-      if (!panel.hidden) { closePanel(); return; }
-      panel.hidden = false;
-      toggleButton.setAttribute('aria-expanded','true');
-      toggleButton.textContent = '体験を閉じる';
-    });
-    window.addEventListener('pagehide',closePanel);
-    reset();
-  })();
-  </script>
-</section>
 
 </main>
 
@@ -490,7 +179,7 @@
     </div>
     <div style="text-align: right;">
       <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.64 0.08 285); font-weight: 300; margin-bottom: 8px;">制作者・お問い合わせ：<a href="https://x.com/hoshikuzukobo42" style="font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: oklch(0.76 0.12 210);">X @hoshikuzukobo42</a></p>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; margin-bottom: 12px;"><a href="guidelines.html" style="color: oklch(0.90 0.04 285); text-decoration: underline; text-underline-offset: 4px;">利用・二次創作ガイドライン</a></p>
+      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; margin-bottom: 12px;"><a href="guidelines.html" style="color: oklch(0.90 0.04 285); text-decoration: underline; text-underline-offset: 4px;">利用・二次創作ガイドライン</a><span aria-hidden="true"> · </span><a href="development.html#faq" style="color: oklch(0.90 0.04 285); text-decoration: underline; text-underline-offset: 4px;">よくある質問</a></p>
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; color: oklch(0.64 0.06 285); letter-spacing: 0.05em;">© 2025 Lumina. All rights reserved.</p>
     </div>
   </div>
