@@ -71,12 +71,13 @@
       <p class="eyebrow">DEVELOPMENT · LUMINA</p>
       <h1>ルミナの今と、これから。</h1>
       <p class="lead">Lumina（ルミナ）は、会話と3D空間での行動をつなぐAIキャラクター開発プロジェクトです。言葉を交わし、周囲を理解し、その場に合った行動へつなげることを目指して、試作と検証を重ねています。</p>
-      <p class="updated">開発状況：2026年10月6日時点 · 試作・検証中</p>
+      <p class="updated">開発状況：2026年10月8日時点 · 試作・検証中</p>
       <nav class="toc" aria-label="このページの内容">
         <a href="#response">応答速度</a>
         <a href="#action">理解と行動</a>
         <a href="#release">公開について</a>
         <a href="#faq">よくある質問</a>
+        <a href="#development-log">開発ログ</a>
       </nav>
     </header>
     <section id="response" aria-labelledby="response-title">
@@ -127,6 +128,22 @@
         <details><summary>返答は必ず1.35秒で返ってきますか？</summary><p>1.35秒は、今回の条件で行った20回の測定の中央値です。最短は1.07秒、最長は7.73秒でした。質問内容や会話の履歴、実行条件によって変わります。</p></details>
         <details><summary>音声での会話も同じ速さですか？</summary><p>音声での応答時間は、まだ測定していません。今回の数値には音声認識・音声合成・音声再生の時間を含まないため、そのまま音声会話の速さを示すものではありません。</p></details>
         <details><summary>キャラクターの動きは完成していますか？</summary><p>現在は試作・検証中です。会話から行動につなげる試作を進めており、行動の確かさや自然さを確認しています。歩行も参考となる動きの調査を踏まえ、改善している段階です。</p></details>
+      </div>
+    </section>
+    <section id="development-log" aria-labelledby="development-log-title">
+      <p class="section-label">05 · DEVELOPMENT LOG</p>
+      <h2 id="development-log-title">2026年10月8日の開発ログ</h2>
+      <div class="grid">
+        <article class="card">
+          <span class="status">隔離環境で検証</span>
+          <h3>会話の診断</h3>
+          <p>会話履歴の整理を調べる診断機能を試作し、隔離環境の合成試験で既存処理との一致を確認しました。本体への導入と音声を含む実機評価は未実施です。</p>
+        </article>
+        <article class="card">
+          <span class="status">保存データの検算完了</span>
+          <h3>歩行の評価</h3>
+          <p>保存済みの歩行データを共通の足裏基準で再解析し、数値の検算を完了しました。停止・旋回を含む連続動作と実機での自然さは未確認です。</p>
+        </article>
       </div>
     </section>
     <div class="closing"><a class="button primary" href="index.html">← トップページへ戻る</a></div>
