@@ -58,6 +58,19 @@
     footer a { color: #e9e0f6; }
     @media(max-width:600px) { main { padding: 48px 20px 64px; } .toc { margin-bottom: 44px; } .grid { grid-template-columns: 1fr; } .stats { gap: 12px; } section { margin-top: 44px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } }
+
+/* Trial recording: scoped player styles. */
+.demo-video-section { padding: 64px clamp(20px,6vw,72px); background: #f7f3fc; scroll-margin-top: 100px; }
+.demo-video-inner { max-width: 1064px; margin: 0 auto; }
+.demo-video-section h2 { color: #312145; font-size: clamp(24px,4vw,36px); font-weight: 400; line-height: 1.6; margin: 0 0 16px; }
+.demo-video-section .demo-video-intro { color: #655472; font-size: 14px; line-height: 1.95; margin: 0 0 22px; }
+.demo-recording { margin: 24px 0 0; min-width: 0; }
+.demo-recording video { display: block; width: 100%; max-width: 960px; height: auto; aspect-ratio: 8 / 5; border-radius: 16px; background: #251635; }
+.demo-recording figcaption { color: #655472; font-size: 13px; line-height: 1.95; margin-top: 18px; }
+.demo-recording figcaption p { margin: 0 0 12px; }
+.demo-watch-link { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid #d7c5ed; border-radius: 24px; color: #542792; background: white; text-decoration: none; font-size: 13px; line-height: 1.6; }
+.demo-watch-link:focus-visible { outline: 3px solid #23829c; outline-offset: 4px; }
+@media (max-width: 600px) { .demo-video-section { padding: 44px 20px; } .demo-recording video { border-radius: 12px; } }
   </style>
 </head>
 <body>
@@ -127,11 +140,27 @@
     </section>
     <section id="release" aria-labelledby="release-title">
       <p class="section-label">03 · RELEASE</p>
-      <h2 id="release-title">公開に向けて。</h2>
+      <h2 id="release-title">試作動画と、これからの公開。</h2>
       <div class="grid">
-        <div class="card"><span class="status">準備中</span><h3>紹介映像</h3><p>ルミナの会話や動きを伝える紹介映像を準備しています。</p></div>
+        <div class="card"><span class="status">収録当時の試作映像</span><h3>会話からソファへの録画</h3><p>9月27日の試作を無音の録画で紹介します。実際に対話できる3D体験版とは別の公開物です。</p><p><a class="demo-watch-link" href="#demo-video">試作動画を見る</a></p></div>
         <div class="card"><span class="status">公開時期未定</span><h3>3D体験版</h3><p>実際にルミナと対話できる3D体験版の公開時期は、まだ決まっていません。</p></div>
       </div>
+
+      <div id="demo-video" style="scroll-margin-top:100px"><figure class="demo-recording">
+      <video controls muted playsinline preload="none" width="960" height="600"
+             poster="lumina-sky-20260927-poster.jpg"
+             aria-label="会話からソファ着座までのLuminaSky試作録画"
+             aria-describedby="development-demo-caption">
+        <source src="lumina-sky-20260927.mp4" type="video/mp4">
+        <a href="lumina-sky-20260927.mp4">無音の試作動画を開く</a>
+      </video>
+      <figcaption id="development-demo-caption">
+        <p><strong>2026年9月27日収録のLuminaSky試作デモ（無音・43.5秒）</strong><br>会話欄の返答後に周囲を探索し、ソファへ歩いて座る流れを録画しました。</p>
+        <p>全編を等速で収録した既存の圧縮コピーです。起動直後の描画と会話待ちも含みます。外観・動作・画面内の文字と数値は収録時点の試作版のものです。</p>
+        <p>現在のモデルの完成度や音声応答の速さを示す映像ではありません。Lumina Nextの20件のテキスト応答測定とは、時期も構成も異なります。</p>
+        <p><a class="demo-watch-link" href="lumina-sky-20260927.mp4">動画ファイルを直接開く（無音）</a></p>
+      </figcaption>
+    </figure></div>
     </section>
     <section id="faq" aria-labelledby="faq-title">
       <p class="section-label">04 · FAQ</p>

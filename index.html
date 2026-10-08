@@ -40,6 +40,19 @@
       footer > div { flex-direction: column; align-items: flex-start !important; gap: 24px !important; }
       footer > div > div:last-child { text-align: left !important; }
     }
+
+/* Trial recording: scoped player styles. */
+.demo-video-section { padding: 64px clamp(20px,6vw,72px); background: #f7f3fc; scroll-margin-top: 100px; }
+.demo-video-inner { max-width: 1064px; margin: 0 auto; }
+.demo-video-section h2 { color: #312145; font-size: clamp(24px,4vw,36px); font-weight: 400; line-height: 1.6; margin: 0 0 16px; }
+.demo-video-section .demo-video-intro { color: #655472; font-size: 14px; line-height: 1.95; margin: 0 0 22px; }
+.demo-recording { margin: 24px 0 0; min-width: 0; }
+.demo-recording video { display: block; width: 100%; max-width: 960px; height: auto; aspect-ratio: 8 / 5; border-radius: 16px; background: #251635; }
+.demo-recording figcaption { color: #655472; font-size: 13px; line-height: 1.95; margin-top: 18px; }
+.demo-recording figcaption p { margin: 0 0 12px; }
+.demo-watch-link { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid #d7c5ed; border-radius: 24px; color: #542792; background: white; text-decoration: none; font-size: 13px; line-height: 1.6; }
+.demo-watch-link:focus-visible { outline: 3px solid #23829c; outline-offset: 4px; }
+@media (max-width: 600px) { .demo-video-section { padding: 44px 20px; } .demo-recording video { border-radius: 12px; } }
   </style>
   <meta name="google-site-verification" content="9dIVVuB6OeoLTcx0quEehQUdjyuX92ICu6KX9doKSK4" />
 
@@ -124,14 +137,37 @@
         <p class="progress-limit">次の確認：連続した停止・旋回と、実機での自然な動き。</p>
       </article>
       <article>
-        <span class="progress-state">公開に向けて準備中</span>
-        <h3>紹介動画と3D体験</h3>
-        <p>開発中の姿を伝える紹介動画と、ルミナとのやり取りを体験できる場を準備しています。</p>
-        <p class="progress-limit">紹介動画・対話型3Dデモは未公開。公開時期はまだ決まっていません。</p>
+        <span class="progress-state">収録当時の試作映像</span>
+        <h3>試作動画と3D体験</h3>
+        <p>会話から周囲の探索、ソファへの着座までをつないだ試作を、録画で紹介します。</p>
+        <p class="progress-limit">動画は9月27日収録の試作です。対話型3D体験は未公開で、公開時期は未定です。</p>
+        <a class="demo-watch-link" href="#demo-video">試作動画を見る（無音）</a>
       </article>
     </div>
     <a class="progress-link" href="development.html#development-log">開発ログと確認できた範囲を見る →</a>
     <p class="progress-note">掲載内容は開発の進捗です。完成版の機能や、実機での動作を保証するものではありません。</p>
+  </div>
+</section>
+
+<section id="demo-video" class="demo-video-section" aria-labelledby="demo-video-title">
+  <div class="demo-video-inner">
+    <h2 id="demo-video-title">会話のあと、ソファへ。</h2>
+    <p class="demo-video-intro">LuminaSkyで収録した、会話・視覚探索・歩行・着座の試作記録です。再生ボタンから無音の動画をご覧いただけます。</p>
+    <figure class="demo-recording">
+      <video controls muted playsinline preload="none" width="960" height="600"
+             poster="lumina-sky-20260927-poster.jpg"
+             aria-label="会話からソファ着座までのLuminaSky試作録画"
+             aria-describedby="top-demo-caption">
+        <source src="lumina-sky-20260927.mp4" type="video/mp4">
+        <a href="lumina-sky-20260927.mp4">無音の試作動画を開く</a>
+      </video>
+      <figcaption id="top-demo-caption">
+        <p><strong>2026年9月27日収録のLuminaSky試作デモ（無音・43.5秒）</strong><br>会話欄の返答後に周囲を探索し、ソファへ歩いて座る流れを録画しました。</p>
+        <p>全編を等速で収録した既存の圧縮コピーです。起動直後の描画と会話待ちも含みます。外観・動作・画面内の文字と数値は収録時点の試作版のものです。</p>
+        <p>現在のモデルの完成度や音声応答の速さを示す映像ではありません。Lumina Nextの20件のテキスト応答測定とは、時期も構成も異なります。</p>
+        <p><a class="demo-watch-link" href="lumina-sky-20260927.mp4">動画ファイルを直接開く（無音）</a></p>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
