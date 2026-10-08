@@ -42,6 +42,24 @@
     }
   </style>
   <meta name="google-site-verification" content="9dIVVuB6OeoLTcx0quEehQUdjyuX92ICu6KX9doKSK4" />
+
+  <style id="development-progress-styles">
+    #development-progress{padding:64px clamp(20px,6vw,72px);background:#f0eafa;color:#302140;font-family:'Noto Sans JP',sans-serif;scroll-margin-top:88px}
+    #development-progress .progress-inner{max-width:1240px;margin:auto}
+    #development-progress .progress-kicker{font:500 11px 'DM Sans',sans-serif;letter-spacing:.16em;color:#6845a4;margin-bottom:12px}
+    #development-progress h2{font-size:clamp(25px,4vw,36px);font-weight:400;line-height:1.5}
+    #development-progress .progress-intro{max-width:780px;margin:14px 0 26px;font-size:14px;line-height:1.9;color:#59496b}
+    #development-progress .progress-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    #development-progress article{background:#fff;border:1px solid #ded1ee;border-radius:20px;padding:26px;min-width:0}
+    #development-progress .progress-state{display:inline-block;padding:5px 10px;border-radius:14px;background:#efe7fa;color:#57318b;font-size:11px;line-height:1.5}
+    #development-progress h3{font-size:19px;font-weight:500;margin:16px 0 10px}
+    #development-progress article p{font-size:13px;line-height:1.9;color:#5c5068}
+    #development-progress .progress-limit{margin-top:12px;padding-top:12px;border-top:1px solid #eee7f6}
+    #development-progress .progress-link{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin-top:24px;padding:12px 24px;border-radius:30px;background:#60319c;color:#fff;font-size:13px}
+    #development-progress .progress-note{margin-top:16px;font-size:12px;line-height:1.8;color:#655472}
+    .hero-update{display:inline-block;margin:0 0 16px;padding:7px 13px;border:1px solid #cdb9e4;border-radius:20px;background:#fff9;font-family:'Noto Sans JP',sans-serif;font-size:11px;line-height:1.6;color:#583081}
+    @media(max-width:760px){#development-progress .progress-grid{grid-template-columns:1fr}#development-progress{padding-top:40px;padding-bottom:40px}#development-progress article{padding:22px}#development-progress .progress-link{width:100%}}
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -64,6 +82,7 @@
   <div style="position: absolute; inset: 0; background: linear-gradient(to right, oklch(0.985 0.008 285 / 0.90) 0%, oklch(0.985 0.008 285 / 0.68) 30%, oklch(0.985 0.008 285 / 0.12) 58%, transparent 72%); pointer-events: none;"></div>
   <div style="position: absolute; inset: 0; display: flex; align-items: center; padding: 0 72px;">
     <div style="position: relative; z-index: 2; max-width: 500px; padding-top: 64px;">
+      <a class="hero-update" href="#development-progress">10月8日更新 · 開発の現在地を見る ↓</a>
       <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: oklch(0.55 0.14 285); font-weight: 500; margin-bottom: 22px; animation: heroIn 0.7s ease both;">3D AI Character Project</p>
       <h1 style="font-family: 'DM Sans', sans-serif; font-size: clamp(72px, 7.5vw, 112px); font-weight: 300; letter-spacing: 0.015em; color: oklch(0.24 0.12 285); line-height: 0.93; margin-bottom: 32px; animation: heroIn 0.75s 0.08s ease both;">Lumina<span style="display: block; margin-top: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(15px, 1.6vw, 18px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.7; overflow-wrap: anywhere;">（ルミナ）｜3D AIキャラクター開発プロジェクト</span></h1>
       <div style="width: 44px; height: 1.5px; background: linear-gradient(to right, oklch(0.68 0.14 210), oklch(0.58 0.14 285)); margin-bottom: 28px; animation: heroIn 0.75s 0.16s ease both;"></div>
@@ -82,6 +101,37 @@
   <div style="position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none;">
     <span style="font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 0.26em; color: oklch(0.68 0.06 285);">SCROLL</span>
     <div style="width: 1px; height: 30px; background: linear-gradient(to bottom, oklch(0.58 0.10 285), transparent); animation: pulse 2s ease-in-out infinite;"></div>
+  </div>
+</section>
+
+
+<section id="development-progress" aria-labelledby="development-progress-title">
+  <div class="progress-inner">
+    <p class="progress-kicker">DEVELOPMENT UPDATE · <time datetime="2026-10-08">2026.10.08</time></p>
+    <h2 id="development-progress-title">ルミナの開発は、ここまで。</h2>
+    <p class="progress-intro">会話と動きを、ひとつずつ確かめながら。試作・検証できたことと、これから確認することをお伝えします。</p>
+    <div class="progress-grid">
+      <article>
+        <span class="progress-state">試作・隔離環境で検証</span>
+        <h3>会話の診断</h3>
+        <p>会話の履歴や処理の状態を調べる診断機能を試作し、隔離した環境で検証しました。</p>
+        <p class="progress-limit">次の確認：本体への組み込み、音声との連携、実機での動作。</p>
+      </article>
+      <article>
+        <span class="progress-state">保存データを再解析</span>
+        <h3>歩行の評価</h3>
+        <p>保存済みの歩行データを共通の足裏評価基準で再解析し、数値を検算しました。</p>
+        <p class="progress-limit">次の確認：連続した停止・旋回と、実機での自然な動き。</p>
+      </article>
+      <article>
+        <span class="progress-state">公開に向けて準備中</span>
+        <h3>紹介動画と3D体験</h3>
+        <p>開発中の姿を伝える紹介動画と、ルミナとのやり取りを体験できる場を準備しています。</p>
+        <p class="progress-limit">紹介動画・対話型3Dデモは未公開。公開時期はまだ決まっていません。</p>
+      </article>
+    </div>
+    <a class="progress-link" href="development.html#development-log">開発ログと確認できた範囲を見る →</a>
+    <p class="progress-note">掲載内容は開発の進捗です。完成版の機能や、実機での動作を保証するものではありません。</p>
   </div>
 </section>
 
