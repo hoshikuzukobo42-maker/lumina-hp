@@ -4,216 +4,332 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Lumina（ルミナ）｜3D AIキャラクター開発プロジェクト</title>
-  <link rel="stylesheet" href="head-safe.css?v=outfit01-headsafe-v1">
   <meta name="description" content="会話の先まで、一緒に。Lumina（ルミナ）は、言葉を交わし、周囲を理解して自分で動くことを目指す3D AIキャラクター。開発の取り組み、ビジュアル、利用・二次創作ガイドラインをご紹介します。">
+  <meta name="google-site-verification" content="9dIVVuB6OeoLTcx0quEehQUdjyuX92ICu6KX9doKSK4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px solid #23829c; outline-offset: 3px; }
-    .skip { position: fixed; left: 20px; top: -100px; z-index: 200; padding: 12px 18px; background: white; color: #312145; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; border-radius: 8px; }
+    :root { color-scheme: light; --paper: #fbf9ff; --ink: #302446; --muted: #61566f; --violet: #584095; --line: #e4dcec; --cyan: #235d62; --gutter: clamp(20px, 4vw, 64px); --nav-height: 76px; }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 24px); }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Noto Sans JP', sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
+    h1, h2, p, figure { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    a:focus-visible { outline: 3px solid #1d6570; outline-offset: 5px; border-radius: 6px; }
+    main:focus { outline: none; }
+    .skip { position: fixed; top: -120px; left: 16px; z-index: 200; padding: 14px 20px; background: white; color: var(--ink); border-radius: 8px; }
     .skip:focus { top: 12px; }
+    .shell { width: min(1280px, calc(100% - var(--gutter) * 2)); margin-inline: auto; }
+    .eyebrow { font-family: 'DM Sans', sans-serif; font-size: 11px; line-height: 1.6; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--violet); }
+    .section-heading { font-size: clamp(28px, 3vw, 38px); font-weight: 500; line-height: 1.55; letter-spacing: .015em; text-wrap: balance; }
+    .body-copy { font-size: 15px; line-height: 2.05; color: var(--muted); overflow-wrap: anywhere; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border: 1px solid var(--violet); border-radius: 999px; font-size: 14px; line-height: 1.5; font-weight: 500; text-align: center; transition: background-color .15s, color .15s; }
+    .button-primary { background: var(--violet); color: white; }
+    .button-secondary { background: #ffffffd9; color: var(--violet); }
+    .button:hover { background: #443075; color: white; }
+    #nav { position: sticky; top: 0; z-index: 100; background: #fbf9fff2; border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+    .nav-inner { min-height: var(--nav-height); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .wordmark { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: .13em; }
+    .nav-links { display: flex; align-items: center; gap: clamp(12px, 2.5vw, 36px); }
+    .nav-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding-inline: 4px; font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 13px; color: var(--muted); }
+    .nav-links a:hover { color: var(--violet); text-decoration: underline; text-underline-offset: 6px; }
+    section { scroll-margin-top: 24px; }
+    #hero { position: relative; isolation: isolate; margin-top: 24px; }
+    .hero-artwork { position: relative; overflow: hidden; border-radius: 24px; background: #edf0fa; }
+    .hero-artwork img { width: 100%; height: auto; aspect-ratio: 1672 / 941; object-fit: contain; }
+    .hero-artwork::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, #fbf9ff 0%, #fbf9fff5 32%, #fbf9ffed 48%, #fbf9ff00 67%); }
+    .hero-copy { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; width: 49%; max-width: 620px; padding: clamp(28px, 4vw, 64px); padding-right: 0; }
+    .hero-heading .eyebrow { margin-bottom: 16px; }
+    h1 { font-family: 'DM Sans', sans-serif; font-size: clamp(80px, 8vw, 112px); font-weight: 400; line-height: .98; letter-spacing: -.045em; }
+    h1 span { display: block; margin-top: 18px; max-width: 390px; font-family: 'Noto Sans JP', sans-serif; font-size: 14px; font-weight: 400; line-height: 1.8; letter-spacing: .015em; text-wrap: balance; }
+    .hero-intro { margin-top: 28px; }
+    .hero-tagline { margin-bottom: 14px; font-size: clamp(20px, 2vw, 26px); font-weight: 500; line-height: 1.7; letter-spacing: .03em; }
+    .hero-description { font-size: 14px; line-height: 1.95; color: #514660; }
+    .hero-credit { margin-top: 14px; font-size: 12px; line-height: 1.8; color: var(--muted); overflow-wrap: anywhere; }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-links .button { padding-inline: 22px; }
+    #about { padding-block: clamp(80px, 9vw, 128px); }
+    .about-grid { max-width: 1120px; margin-inline: auto; display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
+    .about-copy .eyebrow { margin-bottom: 16px; }
+    .about-copy .section-heading { margin-bottom: 28px; }
+    .about-copy .body-copy + .body-copy { margin-top: 20px; }
+    .character-traits { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+    .character-traits span { padding: 7px 13px; border-radius: 999px; background: #eee9f7; color: #554378; font-size: 12px; line-height: 1.6; }
+    .character-traits .trait-cyan { background: #e6f4f4; color: var(--cyan); }
+    .character-traits .trait-gold { background: #fff0cc; color: #715222; }
+    .about-image { width: 100%; border: 1px solid var(--line); border-radius: 24px; object-fit: contain; }
+    #gallery { padding-bottom: clamp(80px, 9vw, 128px); }
+    .gallery-heading { max-width: 800px; margin-bottom: 40px; }
+    .gallery-heading .eyebrow { margin-bottom: 16px; }
+    .gallery-heading .body-copy { margin-top: 16px; }
+    .gallery-frame { overflow: hidden; border-radius: 20px; background: #f0ecf8; border: 1px solid var(--line); }
+    .gallery-frame img { width: 100%; height: auto; object-fit: contain; }
+    .gallery-feature { margin-bottom: 24px; }
+    .gallery-pair { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 24px; }
+    .gallery-pair + .gallery-pair { margin-top: 24px; }
+    .gallery-pair-expressions { grid-template-columns: .8fr 1.2fr; }
+    #roadmap { padding-block: clamp(64px, 7vw, 96px); background: #f0eaf8; border-block: 1px solid var(--line); }
+    .contact-grid { max-width: 1000px; margin-inline: auto; display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 64px; }
+    .contact-art { width: 100%; max-width: 220px; margin-inline: auto; object-fit: contain; }
+    .contact-copy .eyebrow { margin-bottom: 14px; }
+    .contact-copy .section-heading { margin-bottom: 16px; }
+    .contact-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #cfc2df; }
+    .contact-row > div { min-width: 0; }
+    .contact-name { margin-bottom: 6px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; }
+    .contact-detail { font-size: 13px; line-height: 1.9; color: var(--muted); overflow-wrap: anywhere; }
+    .contact-row .button { flex-shrink: 0; }
+    footer { background: #241936; color: #d3c9e0; padding-block: 48px; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    .footer-brand { display: flex; align-items: center; gap: 18px; max-width: 440px; }
+    .footer-brand img { width: 56px; height: 56px; flex-shrink: 0; padding: 4px; border-radius: 50%; object-fit: contain; background: white; }
+    .footer-brand .wordmark { margin-bottom: 8px; color: white; }
+    .footer-tagline { font-size: 12px; line-height: 1.9; }
+    .footer-info { min-width: 0; text-align: right; font-size: 12px; line-height: 1.9; }
+    .footer-contact a { display: inline-flex; align-items: center; min-height: 44px; color: #bbe5e9; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 20px; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 44px; color: #f1eafb; text-decoration: underline; text-underline-offset: 5px; }
+    footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .copyright { margin-top: 8px; font-family: 'DM Sans', sans-serif; font-size: 11px; }
+    @media (max-width: 1100px) {
+      #hero { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+      .hero-copy { position: static; width: auto; max-width: none; padding: 0; grid-column: 1; grid-row: 1; }
+      .hero-artwork { grid-column: 2; grid-row: 1; }
+      .hero-artwork::after { display: none; }
+      h1 { font-size: clamp(68px, 8vw, 88px); }
+      .hero-intro { margin-top: 24px; }
+      .hero-links { margin-top: 24px; }
+      .hero-tagline { font-size: 22px; }
+      .about-grid { gap: 40px; }
+    }
+    @media (max-width: 800px) {
+      #hero { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+      .hero-copy { display: contents; }
+      .hero-heading { grid-column: 1; grid-row: 1; }
+      .hero-artwork { grid-column: 1; grid-row: 2; }
+      .hero-intro { grid-column: 1; grid-row: 3; margin-top: 0; }
+      h1 { font-size: clamp(64px, 12vw, 88px); }
+      h1 span { max-width: none; font-size: 13px; margin-top: 12px; text-wrap: balance; }
+      .hero-heading .eyebrow { margin-bottom: 12px; }
+      .hero-description { font-size: 15px; }
+      .hero-description br { display: none; }
+      .hero-links { margin-top: 22px; }
+      .hero-links .button { flex: 1 1 160px; padding-inline: 18px; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .about-image { max-width: 460px; margin-inline: auto; }
+      .gallery-heading { margin-bottom: 28px; }
+      .gallery-feature { margin-bottom: 16px; }
+      .gallery-pair { grid-template-columns: 1fr; gap: 16px; }
+      .gallery-pair + .gallery-pair { margin-top: 16px; }
+      .gallery-pair-expressions .gallery-frame:first-child { max-width: 460px; width: 100%; margin-inline: auto; }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .contact-art { max-width: 144px; order: 2; }
+      .contact-copy { order: 1; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .footer-info { text-align: left; }
+      .footer-links { justify-content: flex-start; }
+    }
+    @media (max-width: 600px) {
+      :root { --nav-height: 104px; }
+      .nav-inner { min-height: var(--nav-height); flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; padding-block: 8px; }
+      .wordmark { font-size: 17px; line-height: 26px; }
+      .nav-links { width: 100%; justify-content: space-between; gap: 4px; }
+      .nav-links a { font-size: 12px; padding-inline: 3px; }
+      .hero-artwork { border-radius: 16px; }
+      .hero-tagline { font-size: 21px; }
+      .section-heading { font-size: 27px; }
+      .contact-row { flex-direction: column; align-items: flex-start; gap: 18px; }
+      .footer-contact a { overflow-wrap: anywhere; }
+      .footer-links { column-gap: 16px; }
+    }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      #hero [style*="animation"], #roadmap img { animation: none !important; }
-      [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
-    }
-    body { background: oklch(0.985 0.008 285); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    @keyframes floatY {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-14px); }
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-    @keyframes heroIn {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 720px) {
-      footer { padding: 40px 24px !important; }
-      footer > div { flex-direction: column; align-items: flex-start !important; gap: 24px !important; }
-      footer > div > div:last-child { text-align: left !important; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
   </style>
-  <meta name="google-site-verification" content="9dIVVuB6OeoLTcx0quEehQUdjyuX92ICu6KX9doKSK4" />
 
+<style id="new-visual-motion">
+:root { --paper: #faf8ff; --ink: #302445; --muted: #63516f; --violet: #59447d; --line: #e2d8ec; --nav-height: 76px; }
+#nav { background: #fff; border-bottom: 1px solid var(--line); backdrop-filter: none; -webkit-backdrop-filter: none; }
+#nav .wordmark { color: #3e3056; }
+.nav-links a { color: #63516f; min-width: 44px; min-height: 44px; }
+#hero { width: 100%; margin: 0; padding: 44px var(--gutter) 52px; display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.2fr); gap: 40px; align-items: center; background: #fff; isolation: isolate; }
+.hero-artwork { position: relative; grid-column: 2; grid-row: 1; width: 100%; height: 640px; min-width: 0; overflow: hidden; border: 1px solid #d6c5e5; border-radius: 18px; background: #e8ddf2; }
+.hero-artwork::after { display: none; }
+.hero-artwork img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 80% center; }
+.hero-copy { position: static; display: block; width: 100%; max-width: 460px; min-width: 0; padding: 0; grid-column: 1; grid-row: 1; justify-self: center; }
+.hero-heading, .hero-intro { grid-column: auto; grid-row: auto; }
+.hero-heading .eyebrow { margin-bottom: 14px; color: #59447d; font-size: 10px; letter-spacing: .18em; }
+h1 { color: #3e3056; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(84px, 8.5vw, 116px); font-style: italic; font-weight: 400; line-height: .98; letter-spacing: -.05em; }
+h1 span { margin-top: 18px; max-width: none; font-family: 'Noto Sans JP', sans-serif; font-style: normal; font-size: 11px; color: #63516f; line-height: 1.85; letter-spacing: .02em; }
+.hero-intro { margin-top: 36px; }
+.hero-tagline { color: #302445; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(29px, 2.6vw, 38px); line-height: 1.6; font-weight: 500; margin-bottom: 22px; }
+.hero-description { color: #63516f; font-size: 14px; line-height: 1.95; }
+.hero-description br { display: none; }
+.hero-credit { color: #63516f; margin-top: 16px; font-size: 11px; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.hero-links .button { min-width: 44px; min-height: 48px; border-radius: 999px; padding: 12px 18px; font-size: 13px; }
+.hero-links .button-primary { color: #fff; background: #59447d; border-color: #59447d; }
+.hero-links .button-secondary { color: #49365f; background: #fff; border-color: #9c84b1; }
+.hero-links .button:hover { color: #fff; background: #49365f; border-color: #49365f; }
+.about-image, .gallery-frame { border-radius: 12px; }
+.ambient-plane { position: absolute; inset: 0; z-index: 1; pointer-events: none; transform: translate3d(0, calc(var(--depth, 0) * -1px), 0); }
+.spark { position: absolute; display: block; width: 13px; height: 13px; background: #fff5cc; opacity: .16; clip-path: polygon(50% 0, 59% 40%, 100% 50%, 59% 60%, 50% 100%, 41% 60%, 0 50%, 41% 40%); }
+.spark:nth-child(1) { left: 7%; top: 19%; }
+.spark:nth-child(2) { left: 17%; top: 74%; width: 9px; height: 9px; }
+.spark:nth-child(3) { right: 7%; top: 13%; width: 11px; height: 11px; }
+.spark:nth-child(4) { right: 6%; top: 77%; width: 8px; height: 8px; }
+.motion-intro .hero-heading { animation: arrive .42s ease-out both; }
+.motion-intro .hero-artwork { animation: arrive .5s .1s ease-out both; }
+.motion-intro .hero-intro { animation: arrive .42s .22s ease-out both; }
+.motion-stars .spark { animation: glimmer 1.6s .8s ease-in-out 1; }
+.motion-stars .spark:nth-child(2) { animation-delay: 1.15s; }
+.motion-stars .spark:nth-child(3) { animation-delay: 1.5s; }
+.motion-stars .spark:nth-child(4) { animation-delay: 1.8s; }
+@keyframes arrive { from { opacity: .92; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes glimmer { 0%, 100% { opacity: .16; transform: scale(.8); } 45% { opacity: .75; transform: scale(1.45); } }
+@media (max-width: 1100px) and (min-width: 801px) {
+  #hero { gap: 28px; padding-inline: 32px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+  .hero-artwork { height: 620px; }
+  h1 { font-size: 84px; }
+  .hero-tagline { font-size: 30px; }
+}
+@media (max-width: 800px) {
+  #hero { display: grid; grid-template-columns: 1fr; gap: 22px; padding: 28px 24px 40px; }
+  .hero-copy { display: contents; }
+  .hero-heading { grid-column: 1; grid-row: 1; text-align: center; }
+  h1 { font-size: clamp(66px, 16vw, 84px); }
+  h1 span { margin-top: 12px; font-size: 10px; }
+  .hero-heading .eyebrow { margin-bottom: 9px; }
+  .hero-artwork { grid-column: 1; grid-row: 2; width: min(100%, 540px); height: clamp(310px, 88vw, 490px); justify-self: center; border-radius: 14px; }
+  .hero-intro { grid-column: 1; grid-row: 3; margin: 0 auto; width: min(100%, 540px); text-align: center; }
+  .hero-tagline { font-size: 23px; margin-bottom: 12px; }
+  .hero-tagline br { display: none; }
+  .hero-description { font-size: 13px; line-height: 1.85; }
+  .hero-credit { margin-top: 10px; }
+  .hero-links { display: grid; grid-template-columns: 1fr 1fr; margin-top: 20px; }
+  .hero-links .button { min-width: 0; padding-inline: 12px; }
+  .spark:nth-child(4) { display: none; }
+  .about-grid, .gallery-pair { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  :root { --nav-height: 88px; }
+  .nav-inner { min-height: 88px; padding-block: 6px; gap: 0; }
+  .wordmark { font-size: 16px; line-height: 26px; }
+  .nav-links a { font-size: 11px; }
+  .section-heading { font-size: 27px; }
+}
+@media (max-width: 360px) {
+  #hero { padding-inline: 20px; gap: 18px; }
+  h1 { font-size: 64px; }
+  .hero-tagline { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .ambient-plane, .hero-heading, .hero-artwork, .hero-intro { transform: none !important; }
+}
+
+</style>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
-
-<!-- ─── Nav ─────────────────────────────────────────── -->
-<nav id="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 60px; background: rgba(252,250,255,0.80); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); transition: background 0.3s, box-shadow 0.3s;">
-  <span style="font-family: 'DM Sans', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: 0.12em; color: oklch(0.40 0.22 285);">LUMINA</span>
-  <div style="display: flex; gap: 36px;">
-    <a href="#about" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">About</a>
-    <a href="development.html" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Development</a>
-    <a href="#gallery" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Gallery</a>
-    <a href="#roadmap" style="font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: oklch(0.48 0.08 285);">Contact</a>
+<nav id="nav" aria-label="メインナビゲーション">
+  <div class="nav-inner shell">
+    <span class="wordmark">LUMINA</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="development.html">Development</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#roadmap">Contact</a>
+    </div>
   </div>
 </nav>
-
 <main id="main" tabindex="-1">
-<!-- ─── Hero ──────────────────────────────────────────── -->
-<section id="hero" style="position: relative; overflow: hidden; background: oklch(0.985 0.008 285);">
-  <img alt="" src="images/space-walk.png?v=outfit01-headsafe-v1" style="width: 100%; display: block;">
-  <div style="position: absolute; inset: 0; background: linear-gradient(to right, oklch(0.985 0.008 285 / 0.90) 0%, oklch(0.985 0.008 285 / 0.68) 30%, oklch(0.985 0.008 285 / 0.12) 58%, transparent 72%); pointer-events: none;"></div>
-  <div style="position: absolute; inset: 0; display: flex; align-items: center; padding: 0 72px;">
-    <div style="position: relative; z-index: 2; max-width: 500px; padding-top: 64px;">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: oklch(0.55 0.14 285); font-weight: 500; margin-bottom: 22px; animation: heroIn 0.7s ease both;">3D AI Character Project</p>
-      <h1 style="font-family: 'DM Sans', sans-serif; font-size: clamp(72px, 7.5vw, 112px); font-weight: 300; letter-spacing: 0.015em; color: oklch(0.24 0.12 285); line-height: 0.93; margin-bottom: 32px; animation: heroIn 0.75s 0.08s ease both;">Lumina<span style="display: block; margin-top: 16px; font-family: 'Noto Sans JP', sans-serif; font-size: clamp(15px, 1.6vw, 18px); font-weight: 400; letter-spacing: 0.02em; line-height: 1.7; overflow-wrap: anywhere;">（ルミナ）｜3D AIキャラクター開発プロジェクト</span></h1>
-      <div style="width: 44px; height: 1.5px; background: linear-gradient(to right, oklch(0.68 0.14 210), oklch(0.58 0.14 285)); margin-bottom: 28px; animation: heroIn 0.75s 0.16s ease both;"></div>
-      <div style="animation: heroIn 0.75s 0.26s ease both;">
-        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 17px; line-height: 1.9; color: oklch(0.34 0.07 285); font-weight: 300; margin-bottom: 10px;">会話の先まで、一緒に。</p>
-        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: oklch(0.58 0.05 285); font-weight: 300;">言葉を交わし、周りを見て、自分で動く。<br>あなたと同じ空間で過ごすAIキャラクターを<br>目指して、ルミナを開発しています。</p>
-        <p style="margin-top: 12px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.8; color: oklch(0.42 0.06 285); font-weight: 400; overflow-wrap: anywhere;">制作：@hoshikuzukobo42</p>
+  <section id="hero" class="shell" aria-labelledby="hero-title">
+    <div class="hero-artwork">
+      <img src="images/lumina-twilight-hero.webp" width="1536" height="1024" fetchpriority="high" alt="夕暮れの天文ラウンジで、こちらへ手を差し出す全身のルミナ">
+      <div class="ambient-plane" aria-hidden="true"><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span></div>
+    </div>
+    <div class="hero-copy">
+      <div class="hero-heading">
+        <p class="eyebrow">3D AI Character Project</p>
+        <h1 id="hero-title">Lumina<span>（ルミナ）｜3D AIキャラクター開発プロジェクト</span></h1>
       </div>
-      <div style="display: flex; gap: 14px; margin-top: 48px; animation: heroIn 0.75s 0.38s ease both;">
-        <a href="#about" style="padding: 13px 30px; background: oklch(0.40 0.22 285); color: white; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">ルミナを知る</a>
-        <a href="development.html" style="padding: 12px 28px; border: 1.5px solid oklch(0.72 0.12 285); color: oklch(0.40 0.22 285); font-family: 'Noto Sans JP', sans-serif; font-size: 13px; letter-spacing: 0.04em; font-weight: 500; border-radius: 40px;">動画・開発状況</a>
-      </div>
-    </div>
-  </div>
-  <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to top, oklch(0.985 0.008 285), transparent); pointer-events: none;"></div>
-  <div style="position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none;">
-    <span style="font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 0.26em; color: oklch(0.68 0.06 285);">SCROLL</span>
-    <div style="width: 1px; height: 30px; background: linear-gradient(to bottom, oklch(0.58 0.10 285), transparent); animation: pulse 2s ease-in-out infinite;"></div>
-  </div>
-</section>
-
-
-<!-- ─── About ─────────────────────────────────────────── -->
-<section id="about" style="padding: 136px 72px;">
-  <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 88px; align-items: center;">
-    <div data-reveal>
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.55 0.14 285); margin-bottom: 18px;">Character</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; line-height: 1.5; color: oklch(0.24 0.10 285); margin-bottom: 28px;">言葉も、しぐさも。<br>ルミナらしく。</h2>
-      <div style="width: 36px; height: 1.5px; background: oklch(0.70 0.12 210); margin-bottom: 32px;"></div>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-bottom: 20px;">Lumina（ルミナ）は、深い紫の髪と星のアクセントが目印の、3D AIキャラクターです。会話と、目の前の景色と、その場での行動をつなぐ開発プロジェクトから生まれました。</p>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300;">声をかけたときの返事。周りのものへの気づき。目的に向かって動く姿。そのひとつひとつを、自然なやり取りにつなげたい。見た目のかわいさと、実際に関わる楽しさの両方を大切にしています。</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px;">
-        <span style="padding: 5px 14px; background: oklch(0.93 0.04 285); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.44 0.12 285);">濃い紫髪</span>
-        <span style="padding: 5px 14px; background: oklch(0.92 0.05 210); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.42 0.12 210);">水色の袖パネル</span>
-        <span style="padding: 5px 14px; background: oklch(0.93 0.04 285); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.44 0.12 285);">青紫リボン</span>
-        <span style="padding: 5px 14px; background: oklch(0.96 0.04 78); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.48 0.14 78);">星チャーム</span>
-        <span style="padding: 5px 14px; background: oklch(0.93 0.04 285); border-radius: 20px; font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.44 0.12 285);">チェックスカート</span>
-      </div>
-    </div>
-    <div data-reveal data-delay="0.14s">
-      <img alt="ルミナの4つの表情。微笑み、驚き、考え込む顔、楽しそうな笑顔" src="images/expression-sheet.png?v=outfit01-headsafe-v1" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 60px oklch(0.50 0.14 285 / 0.18);">
-    </div>
-  </div>
-</section>
-
-
-<!-- ─── Gallery ───────────────────────────────────────── -->
-<section id="gallery" style="padding: 136px 72px;">
-  <div style="max-width: 1240px; margin: 0 auto;">
-    <div data-reveal style="margin-bottom: 52px;">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.55 0.14 285); margin-bottom: 18px;">Gallery</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285);">いろいろな表情、いろいろなルミナ。</h2>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 2.05; color: oklch(0.42 0.06 285); font-weight: 300; margin-top: 20px;">表情やポーズ、空間の中で過ごす姿をイラストで紹介します。</p>
-    </div>
-    <div data-reveal style="height: 460px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 36px oklch(0.50 0.10 285 / 0.14); margin-bottom: 18px;">
-      <img alt="ルミナの全身イラスト3点。正面、手を差し出すポーズ、背中側から振り向く姿" src="images/pose-sheet.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover; object-position: center 22%;">
-    </div>
-    <div style="display: grid; grid-template-columns: 5fr 7fr; gap: 18px; margin-bottom: 18px;">
-      <div data-reveal data-delay="0.06s" style="height: 400px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 36px oklch(0.50 0.10 285 / 0.14);">
-        <img alt="" src="images/expression-sheet.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
-      </div>
-      <div data-reveal data-delay="0.14s" style="height: 400px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 36px oklch(0.50 0.10 285 / 0.14);">
-        <img alt="ソファのある明るいラウンジで、こちらへ片手を差し出すルミナ" src="images/space-conversation.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-      <div data-reveal data-delay="0.06s" style="height: 320px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 36px oklch(0.50 0.10 285 / 0.14);">
-        <img alt="青空と雲が広がる回廊で、微笑みながら手を差し出すルミナ" src="images/space-walk.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-      <div data-reveal data-delay="0.14s" style="height: 320px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 36px oklch(0.50 0.10 285 / 0.14);">
-        <img alt="自分の全身や横顔のイラストが飾られたギャラリーに立つルミナ" src="images/space-gallery.png?v=outfit01-headsafe-v1" style="width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Contact ───────────────────────────────────────── -->
-<section id="roadmap" style="background: oklch(0.975 0.012 285); padding: 136px 72px;">
-  <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-    <div data-reveal style="display: flex; justify-content: center;">
-      <img alt="" src="images/chibi.png?v=chibi-approved-20260913-v1" style="width: 100%; max-width: 280px; animation: floatY 4s ease-in-out infinite;">
-    </div>
-    <div data-reveal data-delay="0.12s">
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.26em; text-transform: uppercase; color: oklch(0.55 0.14 285); margin-bottom: 18px;">Contact</p>
-      <h2 style="font-family: 'Noto Sans JP', sans-serif; font-size: clamp(30px, 2.8vw, 40px); font-weight: 300; color: oklch(0.24 0.10 285); margin-bottom: 16px;">お問い合わせ</h2>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 13px; line-height: 1.9; color: oklch(0.54 0.06 285); font-weight: 300; margin-bottom: 48px;">ルミナについてのお問い合わせは、制作者のXへ。</p>
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 0;">
-          <div>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: oklch(0.28 0.10 285); letter-spacing: 0.03em; margin-bottom: 3px;">X</p>
-            <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.56 0.06 285); font-weight: 300;">制作者・お問い合わせ窓口：@hoshikuzukobo42</p>
-          </div>
-          <a href="https://x.com/hoshikuzukobo42" style="padding: 4px 14px; background: oklch(0.92 0.05 285); border-radius: 20px; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.1em; color: oklch(0.52 0.12 285); font-weight: 500; white-space: nowrap; flex-shrink: 0; margin-left: 16px;">窓口を見る</a>
+      <div class="hero-intro">
+        <p class="hero-tagline">会話の先まで、<br>一緒に。</p>
+        <p class="hero-description">言葉を交わし、周りを見て、自分で動く。<br>あなたと同じ空間で過ごすAIキャラクターを<br>目指して、ルミナを開発しています。</p>
+        <p class="hero-credit">制作：@hoshikuzukobo42</p>
+        <div class="hero-links">
+          <a class="button button-primary" href="#about">ルミナを知る</a>
+          <a class="button button-secondary" href="development.html">動画・開発状況</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-</main>
-
-<!-- ─── Footer ────────────────────────────────────────── -->
-<footer style="background: oklch(0.22 0.10 285); padding: 56px 72px;">
-  <div style="max-width: 1240px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 40px;">
-    <div style="display: flex; align-items: center; gap: 18px;">
-      <img alt="" src="images/sns-icon.png?v=outfit01-headsafe-v1" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 2px solid oklch(0.50 0.18 285);">
-      <div>
-        <p style="font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0.10em; color: white; margin-bottom: 5px;">LUMINA</p>
-        <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 11px; color: oklch(0.70 0.08 285); font-weight: 300;">会話の先まで、一緒に。開発中の3D AIキャラクター。</p>
+  </section>
+  <section id="about" class="shell" aria-labelledby="about-title">
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">Character</p>
+        <h2 id="about-title" class="section-heading">言葉も、しぐさも。<br>ルミナらしく。</h2>
+        <p class="body-copy">Lumina（ルミナ）は、深い紫の髪と星のアクセントが目印の、3D AIキャラクターです。会話と、目の前の景色と、その場での行動をつなぐ開発プロジェクトから生まれました。</p>
+        <p class="body-copy">声をかけたときの返事。周りのものへの気づき。目的に向かって動く姿。そのひとつひとつを、自然なやり取りにつなげたい。見た目のかわいさと、実際に関わる楽しさの両方を大切にしています。</p>
+        <div class="character-traits">
+          <span>濃い紫髪</span><span class="trait-cyan">水色の袖パネル</span><span>青紫リボン</span><span class="trait-gold">星チャーム</span><span>チェックスカート</span>
+        </div>
+      </div>
+      <img class="about-image" src="images/expression-sheet.png?v=outfit01-headsafe-v1" width="1254" height="1254" loading="lazy" alt="ルミナの4つの表情。微笑み、驚き、考え込む顔、楽しそうな笑顔">
+    </div>
+  </section>
+  <section id="gallery" class="shell" aria-labelledby="gallery-title">
+    <div class="gallery-heading">
+      <p class="eyebrow">Gallery</p>
+      <h2 id="gallery-title" class="section-heading">いろいろな表情、いろいろなルミナ。</h2>
+      <p class="body-copy">表情やポーズ、空間の中で過ごす姿をイラストで紹介します。</p>
+    </div>
+    <div class="gallery-frame gallery-feature">
+      <img src="images/pose-sheet.png?v=outfit01-headsafe-v1" width="1651" height="953" loading="lazy" alt="ルミナの全身イラスト3点。正面、手を差し出すポーズ、背中側から振り向く姿">
+    </div>
+    <div class="gallery-pair gallery-pair-expressions">
+      <div class="gallery-frame"><img src="images/expression-sheet.png?v=outfit01-headsafe-v1" width="1254" height="1254" loading="lazy" alt=""></div>
+      <div class="gallery-frame"><img src="images/space-conversation.png?v=outfit01-headsafe-v1" width="1672" height="941" loading="lazy" alt="ソファのある明るいラウンジで、こちらへ片手を差し出すルミナ"></div>
+    </div>
+    <div class="gallery-pair">
+      <div class="gallery-frame"><img src="images/space-walk.png?v=outfit01-headsafe-v1" width="1672" height="941" loading="lazy" alt="青空と雲が広がる回廊で、微笑みながら手を差し出すルミナ"></div>
+      <div class="gallery-frame"><img src="images/space-gallery.png?v=outfit01-headsafe-v1" width="1672" height="941" loading="lazy" alt="自分の全身や横顔のイラストが飾られたギャラリーに立つルミナ"></div>
+    </div>
+  </section>
+  <section id="roadmap" aria-labelledby="contact-title">
+    <div class="shell">
+      <div class="contact-grid">
+        <img class="contact-art" src="images/chibi.png?v=chibi-approved-20260913-v1" width="1024" height="1536" loading="lazy" alt="">
+        <div class="contact-copy">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title" class="section-heading">お問い合わせ</h2>
+          <p class="body-copy">ルミナについてのお問い合わせは、制作者のXへ。</p>
+          <div class="contact-row">
+            <div><p class="contact-name">X</p><p class="contact-detail">制作者・お問い合わせ窓口：@hoshikuzukobo42</p></div>
+            <a class="button button-primary" href="https://x.com/hoshikuzukobo42">窓口を見る</a>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="text-align: right;">
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; color: oklch(0.64 0.08 285); font-weight: 300; margin-bottom: 8px;">制作者・お問い合わせ：<a href="https://x.com/hoshikuzukobo42" style="font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.1em; color: oklch(0.76 0.12 210);">X @hoshikuzukobo42</a></p>
-      <p style="font-family: 'Noto Sans JP', sans-serif; font-size: 12px; line-height: 1.8; margin-bottom: 12px;"><a href="guidelines.html" style="color: oklch(0.90 0.04 285); text-decoration: underline; text-underline-offset: 4px;">利用・二次創作ガイドライン</a><span aria-hidden="true"> · </span><a href="development.html#faq" style="color: oklch(0.90 0.04 285); text-decoration: underline; text-underline-offset: 4px;">よくある質問</a></p>
-      <p style="font-family: 'DM Sans', sans-serif; font-size: 10px; color: oklch(0.64 0.06 285); letter-spacing: 0.05em;">© 2025 Lumina. All rights reserved.</p>
+  </section>
+</main>
+<footer>
+  <div class="footer-inner shell">
+    <div class="footer-brand">
+      <img src="images/sns-icon.png?v=outfit01-headsafe-v1" width="1254" height="1254" loading="lazy" alt="">
+      <div><p class="wordmark">LUMINA</p><p class="footer-tagline">会話の先まで、一緒に。開発中の3D AIキャラクター。</p></div>
+    </div>
+    <div class="footer-info">
+      <p class="footer-contact">制作者・お問い合わせ：<a href="https://x.com/hoshikuzukobo42">X @hoshikuzukobo42</a></p>
+      <p class="footer-links"><a href="guidelines.html">利用・二次創作ガイドライン</a><a href="development.html#faq">よくある質問</a></p>
+      <p class="copyright">© 2025 Lumina. All rights reserved.</p>
     </div>
   </div>
 </footer>
-
-<script>
-  // Nav scroll opacity
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    const s = window.scrollY > 24;
-    nav.style.background = s ? 'rgba(252,250,255,0.96)' : 'rgba(252,250,255,0.80)';
-    nav.style.boxShadow = s ? '0 1px 0 rgba(160,120,220,0.12)' : 'none';
-  }, { passive: true });
-
-  // Scroll reveal
-  const reveals = document.querySelectorAll('[data-reveal]');
-  reveals.forEach(el => {
-    const delay = el.dataset.delay || '0s';
-    Object.assign(el.style, {
-      opacity: '0',
-      transform: 'translateY(30px)',
-      transition: `opacity 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}, transform 0.85s cubic-bezier(0.16,1,0.3,1) ${delay}`
-    });
-  });
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => obs.observe(el));
-</script>
+<script src="motion.js" defer></script>
 </body>
 </html>
