@@ -145,6 +145,27 @@
         <p><a class="demo-watch-link" href="lumina-sky-20260927.mp4">動画ファイルを直接開く（無音）</a></p>
       </figcaption>
     </figure></div>
+      <div id="ardy-verification" aria-labelledby="ardy-verification-title">
+        <h3 id="ardy-verification-title">10月15日の歩行・停止・再開の検証動画</h3>
+        <p>保存していたARDYの動作データを使い、Godotで実際に描画した映像です。途中で止まり、その位置からまた歩く処理を確認し、配信アプリへ反映しました。映像のモデルは以前の試作版です。新しいモデルの見た目と、歩き方の自然さは調整を続けています。</p>
+        <div class="verification-videos">
+          <figure class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="ardy-walk-20261015-poster.png" aria-label="ARDY歩行の検証動画（約6秒・無音）" aria-describedby="ardy-walk-caption">
+              <source src="ardy-walk-20261015.mp4" type="video/mp4">
+              <a href="ardy-walk-20261015.mp4">歩行の検証動画を開く</a>
+            </video>
+            <figcaption id="ardy-walk-caption"><p><strong>歩行の完走 · 約6秒・無音</strong><br>歩き終えたあとの立ち姿まで確認しています。</p><p><a href="ardy-walk-20261015.mp4">動画を直接開く</a></p></figcaption>
+          </figure>
+          <figure class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="ardy-stop-resume-20261015-poster.png" aria-label="ARDY停止と再開の検証動画（約11秒・無音）" aria-describedby="ardy-stop-resume-caption">
+              <source src="ardy-stop-resume-20261015.mp4" type="video/mp4">
+              <a href="ardy-stop-resume-20261015.mp4">停止と再開の検証動画を開く</a>
+            </video>
+            <figcaption id="ardy-stop-resume-caption"><p><strong>停止して、その場から再開 · 約11秒・無音</strong><br>立ち止まったあと、位置を戻さずに歩き直しています。</p><p><a href="ardy-stop-resume-20261015.mp4">動画を直接開く</a></p></figcaption>
+          </figure>
+        </div>
+        <p class="note">今回は保存済みの動作を再生した検証です。新しい動作を生成する処理や、マイクで話しかけて返答を聞くまでの連携は、まだ確認できていません。</p>
+      </div>
     </section>
     <section id="faq" aria-labelledby="faq-title">
       <p class="section-label">04 · FAQ</p>
@@ -179,7 +200,7 @@
       <div class="grid">
         <article class="card"><span class="status">表示・操作を確認</span><h3>イラストと紹介ページ</h3><p>紹介用のイラストを新しくし、動画・開発状況・ガイドラインのページを見直しました。画像を拡大して見る操作と、試作動画の再生をブラウザーで確認しています。</p></article>
         <article class="card"><span class="status">修正して確認中</span><h3>会話の終了と中断</h3><p>会話を終えたり途中で中断したりするときの処理を修正し、会話を扱う仕組みに取り入れました。テストと実際の通信で確認しています。声でのやり取りや長く続けた会話の品質は、引き続き確かめています。</p></article>
-        <article class="card"><span class="status">検証を継続</span><h3>モデルと歩き方</h3><p>最新のモデル原本を確認し、見た目と動作の検証を進めています。歩行の判定記録と映像を照らし合わせる作業も継続中です。3D体験版の公開時期はまだ決まっていません。</p></article>
+        <article class="card"><span class="status">歩行映像を追加</span><h3>モデルと歩き方</h3><p>歩行の完走と、停止した位置からの再開を実際の描画で確かめ、検証動画を追加しました。モデル原本を保存し、原画に近づける髪の調整と新モデルの動作確認を進めています。3D体験版の公開時期はまだ決まっていません。</p></article>
       </div>
     </section>
     <div class="closing"><a class="button primary" href="index.html">← トップへ戻る</a></div>
