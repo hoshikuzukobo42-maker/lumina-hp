@@ -1,0 +1,50 @@
+Self-hosted font files: origin and SHA-256 (for provenance and integrity checks)
+
+Each WOFF2 below is a byte-identical copy of the file that the Google Fonts CSS API served on 2026-10-10 for
+  https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap
+(Chrome user agent). Only the unicode-range slices that index.html, development.html and guidelines.html use are included;
+css/fonts.css declares them with the same unicode-range values and in the same order as the Google CSS.
+Licence: SIL Open Font License 1.1 - see OFL-DMSans.txt and OFL-NotoSansJP.txt in this folder.
+Verify with: shasum -a 256 fonts/*.woff2
+
+468d56b6b25b05b70190b6c233d773f6f1770e8579827ce022a57f03fa8002fb  dm-sans-latin.woff2  36980 bytes  <- https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2
+d9b1b57892c0484008fccd4af07dcd8303569b1022af59cbd6dd1dbb2c552dbc  noto-sans-jp-100.woff2  22872 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.100.woff2
+662df765fb4c06e2b62a7eb0ee6d77f323fe6f87e50af822575dab0109f59d8c  noto-sans-jp-101.woff2  18308 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.101.woff2
+c4557a49dcd65c5168dec4dc8e3b4d5059c7ecac38733acc9bc96576cdc152e0  noto-sans-jp-102.woff2  20812 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.102.woff2
+450ae5f071847470de2a44b2baf60f7f4fb859bdac401e5d4e60c97d42b9af64  noto-sans-jp-103.woff2  18360 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.103.woff2
+0f17b2748b52c59bc97ae562aabb38e7232409659641e64c2be4277ccd608b41  noto-sans-jp-104.woff2  19984 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.104.woff2
+20217ea3b246ebadd90737aaedf3874cc934a781d7d17903c0a65a32698eb329  noto-sans-jp-105.woff2  18940 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.105.woff2
+6e4e9355deb91d40e98d014b296ce6a2cfd5be73e27bfd1618939f036b41a758  noto-sans-jp-106.woff2  23860 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.106.woff2
+4ba5ffc310182ba6dd4a2b762967c4600774665ef54f621004acdbb905ba753d  noto-sans-jp-107.woff2  18780 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.107.woff2
+fd237e1c09106cb15a4961de0363a91f34c16a3624156f717576e8b4fa4d3038  noto-sans-jp-108.woff2  21444 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.108.woff2
+e8b5680f69489d24a0857537a764fdf539cb7eb3d411aa50290b2f1eb215a589  noto-sans-jp-109.woff2  16524 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.109.woff2
+9599b975b5bd4bd9e79e8b19710f2fe4250d57380ee2f08e97e1491f86a4326c  noto-sans-jp-110.woff2  17780 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.110.woff2
+9746bd72270dc0efc4556a06d9ec5511153e0df3753fe332197510485d5344ff  noto-sans-jp-111.woff2  18860 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.111.woff2
+18c4caeda214240fede839a9a1677df15852097e6ddfdc2b10a8abb43071bd9c  noto-sans-jp-112.woff2  17348 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.112.woff2
+6403394a9980dafe0ceee3b7edad1975fd52b6630e242ffc3dc369d66cedb551  noto-sans-jp-113.woff2  16488 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.113.woff2
+9a11a2f335bd9e84964dd1d62d3e014d06a1eec60dd3cf20ecff986e0d895cd2  noto-sans-jp-114.woff2  16632 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.114.woff2
+4bc049769a14c1c25d8eca994cf17a56070aaa72c59c4566bc48ef43cc7d29e3  noto-sans-jp-115.woff2  19704 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.115.woff2
+63a5792ca5f4942bfe44289bdc0bc8dd57e3f8b0210f5a0e34d7ebe588915d61  noto-sans-jp-116.woff2  17320 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.116.woff2
+a20b7431a801b17936af0b15fd2082da8fa3cb12c8d55035390ade372ab1d8a2  noto-sans-jp-117.woff2  13004 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.117.woff2
+701aa37e03b10aeb64ed937c94d2e9365a06b253a6bb439a26fa7045de121298  noto-sans-jp-118.woff2  18284 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.118.woff2
+bcf3f4c1d2503f1f4c36e664ea446ba4bd0bd0c14948b8bc039a7adc74d29735  noto-sans-jp-119.woff2  78868 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.119.woff2
+3c78df1121834a7f63888d45f48b561dd300419868677b26acc6565c5324f816  noto-sans-jp-68.woff2  23448 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.68.woff2
+719a95a81aa2f4fc5f75931beef933f7f892c30bbebf7b715d0941577d0bd381  noto-sans-jp-76.woff2  20532 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.76.woff2
+009709def6f2bbb9827c60a1265abfc5fc6afa90b387a1f8bd3b16bfa95ce1bd  noto-sans-jp-78.woff2  23080 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.78.woff2
+bc332e58a1ae8e7234864aaf637bac3338ca53c63cc20b980c9cc9b3892592d6  noto-sans-jp-82.woff2  21580 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.82.woff2
+ab05c4a9bee318021843f46f1139c56d5488fc433ddd16a752a2b828a7f34358  noto-sans-jp-83.woff2  21232 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.83.woff2
+6e1b17bdd0dd4f357698ea71d37571f691fdcd44ddf2aae7d9ed2943acc7ff6f  noto-sans-jp-85.woff2  19096 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.85.woff2
+d8e0ba34314deff2b1a393223c6d1286efcab6024a2985e9e91b382f3cb64734  noto-sans-jp-86.woff2  19252 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.86.woff2
+4d7ca14c9eea5afdbc4ed10c30d875c706a65ddaaceaca702600712da9288b1f  noto-sans-jp-87.woff2  22200 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.87.woff2
+336db5373f820565120565d80326380b662f98bde8c15e665887a8ca99843557  noto-sans-jp-88.woff2  19724 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.88.woff2
+91eea7a9e124efec4d6b435ec8096cf0e7b8118bb6fa49bf38cb4dc2746e30e1  noto-sans-jp-90.woff2  22036 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.90.woff2
+b2d87199260e5b1954de4f16e442672d30751aab3610ec56114320d446156910  noto-sans-jp-91.woff2  21924 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.91.woff2
+bde28debfa6489e5da1808d36d5c50dbf79403b99448c3470678306f95967e51  noto-sans-jp-92.woff2  21096 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.92.woff2
+61fb2788fb317a6781247e9abbba9b805d81624cce847bbe632e607ff1fc1daf  noto-sans-jp-93.woff2  19512 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.93.woff2
+69b2985f9b4520f4a8f11852bd5054a9dcfe1af4b53c570e6b5cb81f3f171d2d  noto-sans-jp-94.woff2  22068 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.94.woff2
+367ebd6d6ae02b7ad96466b8916c19aa0a50cbdaff175b77bf3075d0d5ac3d62  noto-sans-jp-95.woff2  20220 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.95.woff2
+64ec79c6ea108eaaa352044d749c6eabac901bc662a823ffda7ed6ad21fa5681  noto-sans-jp-96.woff2  22204 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.96.woff2
+95dc6f7a3cffa3050327c7b8e62964832fb57df035c67f9cee3654243d9a58d5  noto-sans-jp-97.woff2  19948 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.97.woff2
+a0140d7af30c40505bcaa747c4d13727a48fbd65c07545c1fc43513d5fcd5b82  noto-sans-jp-98.woff2  20956 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.98.woff2
+04835dd1a5e7977ba584d72c078d572ef131c074fde28b1f8d6b87c779725bb5  noto-sans-jp-99.woff2  21616 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.99.woff2
+f349e5c5f705a845a4f93d70b63f6e5a4bd139dc3bb5c75e6cf74da6d84940dc  noto-sans-jp-latin.woff2  24648 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFYwQgP-FVthw.woff2
