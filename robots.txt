@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hoshikuzukobo42-maker.github.io/lumina-hp/sitemap.xml

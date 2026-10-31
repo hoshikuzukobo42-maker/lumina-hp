@@ -78,3 +78,17 @@ footer { padding-block: 1.8rem 3rem; }
   h2, h3 { break-after: avoid; }
   a { color: inherit; }
 }
+
+.quick { margin-top: 1.8rem; }
+.quick h2 { margin: 0 0 .4rem; font-size: 1.15rem; }
+.quick-note { margin: .4rem 0 .8rem; color: var(--muted); font-size: .9rem; }
+.quick-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 1rem; background: var(--panel); }
+.quick table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: .93rem; line-height: 1.75; }
+.quick th, .quick td { padding: .8rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.quick thead th { font-size: .82rem; color: var(--muted); font-weight: 500; background: var(--soft); }
+.quick tbody tr:last-child th, .quick tbody tr:last-child td { border-bottom: 0; }
+.quick tbody th { white-space: nowrap; font-weight: 500; }
+.mark { display: inline-block; padding: .1rem .7rem; border-radius: 99px; font-size: .82rem; border: 1px solid; }
+.mark.ok { color: #1f5f56; border-color: #8fb7ae; background: #eef6f2; }
+.mark.ask { color: #7a5520; border-color: #d6b98a; background: #fbf3e4; }
+.mark.ng { color: #8a2f3c; border-color: #dba5ad; background: #fbeef0; }

@@ -43,3 +43,54 @@
 .film-teaser:focus-visible{outline-color:#15675e;outline-offset:7px}
 @media(hover:hover) and (pointer:fine){.film-teaser:hover .film-play{background:#57416e}.film-teaser:hover .film-action{border-color:#f2e8d5}}
 @media(max-width:760px){.opening-folio{font-size:12px}.film-section{padding-top:42px}.film-teaser{grid-template-columns:1fr;gap:26px;padding:22px;box-shadow:6px 6px 0 #d8cfc0}.film-copy h2{font-size:27px;margin:14px 0}.film-meta{gap:8px 14px}.film-action{max-width:none}.film-frame figcaption{font-size:12px}}
+
+/* 2026-10-31 redesign: status, about pillars, profile, progress, FAQ. */
+.masthead nav{overflow-x:auto;scrollbar-width:none}.masthead nav::-webkit-scrollbar{display:none}.masthead nav a{white-space:nowrap}
+.opening{padding-bottom:0}.opening-copy{padding-bottom:72px}
+.status-note{display:flex;gap:10px;align-items:flex-start;max-width:30em;margin-top:30px;padding:12px 16px;border:1px solid var(--line);background:#fbf9f3;font-size:12px;line-height:1.8;color:var(--muted)}
+.status-dot{flex:none;width:8px;height:8px;margin-top:.62em;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #a7783422}
+.portrait-copy h2{margin:16px 0 22px}
+.pillars{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pillars li{padding:16px 14px;background:#faf7ef;border:1px solid var(--line)}
+.pillars strong{display:block;font-size:17px;font-weight:500;color:var(--plum);letter-spacing:.08em}
+.pillars span{display:block;margin-top:6px;font-size:12px;line-height:1.85;color:var(--muted)}
+.aside-note{margin-top:18px;font-size:12px;color:var(--muted)}.aside-note a,.faq-list a,.profile-table a{text-decoration:underline;text-underline-offset:4px;color:var(--plum)}
+.section-head{margin-bottom:40px}.section-head h2{margin-top:12px;font-size:clamp(27px,3vw,38px);font-weight:400;line-height:1.6;letter-spacing:.04em}.section-head>p:not(.kicker){margin-top:12px;font-size:14px;color:var(--muted)}
+.profile-section{padding:clamp(72px,9vw,130px) var(--gutter);background:#faf8f1;border-block:1px solid var(--line)}
+.profile-inner,.progress-inner,.faq-inner{max-width:1120px;margin:auto}
+.profile-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,80px);align-items:start}
+.profile-table{margin:0;border-top:1px solid var(--line)}
+.profile-table div{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.profile-table dt{font-size:12px;letter-spacing:.06em;color:var(--muted);padding-top:2px}
+.profile-table dd{margin:0;font-size:15px;line-height:1.85}
+.expression-art figcaption,.design-art figcaption{margin-top:12px;font-size:12px;color:var(--muted)}
+.expression-art img{aspect-ratio:1/1;object-fit:cover;border:1px solid var(--line)}
+.design-art{margin-top:clamp(48px,6vw,80px)}.design-art img{width:100%;aspect-ratio:960/554;object-fit:cover;border:1px solid var(--line);background:#fff}
+.design-art figcaption{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap}.design-art figcaption .kicker{flex:none}
+.film-section{padding-top:clamp(64px,8vw,110px)}
+.progress-section{padding:clamp(72px,9vw,120px) var(--gutter);background:#e9e7dc;border-block:1px solid #d6d3c3}
+.progress-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:14px}
+.progress-list li{padding:20px 18px 22px;background:#faf8ef;border:1px solid #d3cfbc}
+.progress-list h3{margin:12px 0 8px;font-size:16px;font-weight:500;line-height:1.6}
+.progress-list p{margin:0;font-size:13px;line-height:1.9;color:var(--muted)}
+.tag{display:inline-block;padding:2px 10px;border-radius:99px;font-size:12px;line-height:1.7;border:1px solid}
+.tag.done{color:#1f5f56;border-color:#8fb7ae;background:#eef6f2}.tag.wip{color:#7a5520;border-color:#d6b98a;background:#fbf3e4}.tag.plan{color:#5b4c6c;border-color:#c3b5d1;background:#f4f0f8}
+.progress-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;margin:32px 0 0}.updated{font-size:12px;color:var(--muted)}
+.faq-section{padding:clamp(72px,9vw,120px) var(--gutter)}
+.faq-list{border-top:1px solid var(--line)}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:12px 0;font-size:15px;font-weight:500;cursor:pointer;list-style:none}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"＋";flex:none;color:var(--gold);font-size:18px}.faq-list details[open] summary::after{content:"−"}
+.faq-list details p{margin:0 0 20px;font-size:14px;line-height:2;color:var(--muted);max-width:46em}
+@media(max-width:1000px){.pillars{grid-template-columns:1fr}.pillars li{display:flex;gap:14px;align-items:baseline}.pillars span{margin-top:0}}
+@media(max-width:760px){.masthead nav{justify-content:flex-start;gap:18px}.opening-copy{padding-bottom:36px}.status-note{margin-top:22px}.profile-grid{grid-template-columns:1fr}.profile-table div{grid-template-columns:1fr;gap:2px;padding:13px 0}.profile-table dd{font-size:14px}.expression-art{max-width:460px;margin:auto}.design-art{margin-inline:calc(-1 * var(--gutter))}.design-art figcaption{padding-inline:var(--gutter)}.design-art img{border-inline:0}.section-head{margin-bottom:28px}.faq-list summary{font-size:14px}.faq-list details p{font-size:13px}}
+.small-note{display:inline-block;margin-top:8px;font-size:12px;color:var(--muted)}
+.footer{flex-wrap:wrap}.footer-note{flex-basis:100%;order:3;margin-top:4px;padding-top:16px;border-top:1px solid #ffffff22;font-size:12px;color:#b7c5bd}
+.timeline-block{margin-top:40px;padding:24px clamp(18px,3vw,32px);background:#faf8ef;border:1px solid #d3cfbc}
+.timeline-title{margin:0 0 12px;font-size:16px;font-weight:500}
+.timeline{list-style:none;margin:0;padding:0}
+.timeline li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:16px;padding:10px 0;border-top:1px dashed #d3cfbc;font-size:13px;line-height:1.8}
+.timeline li:first-child{border-top:0}
+.timeline time{font-family:Georgia,"Times New Roman",serif;letter-spacing:.06em;color:var(--gold)}
+@media(max-width:760px){.timeline li{grid-template-columns:1fr;gap:0}}
