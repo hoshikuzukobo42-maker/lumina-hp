@@ -6,7 +6,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>開発状況・試作動画｜Lumina（ルミナ）</title>
-  <meta name="description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。文章で返事が届くまでの時間を測った結果や、会話から動きにつなげる試作、試作動画、3D体験版の公開状況をご紹介します。">
+  <meta name="description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。声での会話、歩く・座る、話の途中で止める仕組みなど、2026年10月18日時点の進み具合を実測値とともにご紹介します。まだできないことも載せています。">
   <link rel="canonical" href="https://hoshikuzukobo42-maker.github.io/lumina-hp/development.html">
   <meta name="theme-color" content="#f8f6fb">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina（ルミナ）">
   <meta property="og:title" content="開発状況・試作動画｜Lumina（ルミナ）">
-  <meta property="og:description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。文章で返事が届くまでの時間を測った結果や、会話から動きにつなげる試作、試作動画、3D体験版の公開状況をご紹介します。">
+  <meta property="og:description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。声での会話、歩く・座る、話の途中で止める仕組みなど、2026年10月18日時点の進み具合を実測値とともにご紹介します。まだできないことも載せています。">
   <meta property="og:url" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/development.html">
   <meta property="og:image" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/images/ogp/development.jpg">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@hoshikuzukobo42">
   <meta name="twitter:title" content="開発状況・試作動画｜Lumina（ルミナ）">
-  <meta name="twitter:description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。文章で返事が届くまでの時間を測った結果や、会話から動きにつなげる試作、試作動画、3D体験版の公開状況をご紹介します。">
+  <meta name="twitter:description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。声での会話、歩く・座る、話の途中で止める仕組みなど、2026年10月18日時点の進み具合を実測値とともにご紹介します。まだできないことも載せています。">
   <meta name="twitter:image" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/images/ogp/development.jpg">
   <meta name="twitter:image:alt" content="ルミナのイラストと、「ルミナの今と、これから。」開発状況・試作動画の文字">
   <link rel="stylesheet" href="css/fonts.css">
@@ -43,13 +43,14 @@
     <header class="page-head">
       <h1>ルミナの今と、これから。</h1>
       <p class="lead">ルミナは、会話と3D空間での動きをつなぐAIキャラクターとして開発しています。話して、まわりの様子をつかみ、その場に合った動きにつなげる。そのための試作と確認を重ねています。このページでは、進み具合や測った結果、試作動画をご紹介します。</p>
-      <p class="updated">開発状況：2026年10月15日時点（返事までの時間は10月6日に測定）</p>
+      <p class="updated">開発状況：2026年10月18日時点。数字はすべて、制作者のMac（Apple M1 Max・32GB）で動かしている試作アプリで測った値です。</p>
       <nav class="toc" aria-label="このページの内容">
         <a href="#prototype-overview">いまの取り組み</a>
         <a href="#response">返事までの時間</a>
         <a href="#action">会話から動きへ</a>
         <a href="#demo-video">試作動画</a>
-        <a href="#latest-progress">最新の進捗</a>
+        <a href="#progress-1018">最新の進捗</a>
+        <a href="#not-yet">まだできないこと</a>
         <a href="#development-log">開発ログ</a>
         <a href="#faq">よくある質問</a>
       </nav>
@@ -58,10 +59,10 @@
       <h2 id="prototype-overview-title">いま取り組んでいること</h2>
       <p class="lead section-intro">いま取り組んでいることを、テーマごとにまとめました。それぞれ、ここまでに試したことと、これから確かめることを分けて書いています。</p>
       <div class="grid">
-        <article class="card"><span class="status">話し方の案を検討中</span><h3>会話と<wbr>ルミナらしさ</h3><p>ルミナらしい話し方や返事のしかたの案をいくつかまとめて、会話が自然に続くか、話の流れが前後でぶれないかを見ています。</p><p class="small">どの案も試している最中で、ルミナにはまだ取り入れていません。長く話したときにどうなるかも、これから確かめます。</p></article>
-        <article class="card"><span class="status">つなぐ準備中</span><h3>声での<wbr>やり取り</h3><p>声を聞いて、返事をして、動く。この流れをひとつにつなぐ準備を、これまでの記録を見直しながら進めています。</p><p class="small">声で話したときのやり取りの質や返事の速さは、まだ確かめている途中です。</p></article>
-        <article class="card"><span class="status">ひと続きの試作あり</span><h3>会話から<wbr>ソファへ</h3><p>会話をきっかけに、ルミナが周りを探し、ソファへ歩いて座るまでをつないだ試作です。</p><p class="small">記録と映像の見比べも、立ち止まったり向きを変えたりするときの動きのつながりや自然さも、これから確かめます。</p></article>
-        <article class="card"><span class="status">軽くする方法を比較中</span><h3>軽く<wbr>動かす工夫</h3><p>ルミナを動かす仕組みを軽くするために、いくつかのやり方を試しています。</p><p class="small">やり方ごとに速さや安定性がどうなるかは、まだ確かめきれていません。</p></article>
+        <article class="card"><span class="status">試作アプリで動作</span><h3>声での<wbr>やり取り</h3><p>マイクボタンを押して話しかけると、聞き取って、声で答えます。日常の短い話しかけで、話しかけてから声が出るまで5.5〜8.8秒でした（10月17日）。</p><p class="small">マイクを開いたままの常時の聞き取りは、まだできません。試験の声は macOS の読み上げ音声で、人の声ではまだ測っていません。</p></article>
+        <article class="card"><span class="status">試作アプリで動作</span><h3>歩く・<wbr>座る</h3><p>12の部屋を順に歩かせて、すべての区間で目的の部屋に着きました。家具や壁へのめり込みはありませんでした。リビングのソファ、読書室のアームチェア、衣装室のオットマンに座れます。</p><p class="small">座る前に、目のカメラで椅子を2回確かめます。部屋から部屋への移動では、まだ目は使っていません。</p></article>
+        <article class="card"><span class="status">試作アプリで動作</span><h3>話の途中で<wbr>止める</h3><p>停止ボタンを押すと、アプリの中では0.25〜3.9ミリ秒で声を止めます。マイクで「止まって」「待って」などと言っても止まり、止める言葉ではない発話160個で誤って止まったことはありませんでした。</p><p class="small">ルミナの声がマイクに入っているときは、声で止められるのは半分ほどです。人の声での成功率はまだ測っていません。</p></article>
+        <article class="card"><span class="status">改善を続けています</span><h3>話し方と<wbr>ルミナらしさ</h3><p>本人の返事が、決まり文句に置き換わってしまう問題を直しました。誤って置き換わっていた162件のうち、本人の返事が残るのは12件から157件になりました。</p><p class="small">長く話し続けたときの自然さは、引き続き確かめています。</p></article>
       </div>
       <p class="disclaimer">どれも開発の途中です。</p>
     </section>
@@ -165,8 +166,18 @@
         <p class="note">この2本は、用意した動きを再生して確かめた映像です。その場で新しい動きを作る処理や、マイクで話しかけてから返事を聞くまでの流れは、この映像には含まれていません。</p>
       </div>
     </section>
+    <section id="progress-1018" aria-labelledby="progress-1018-title">
+      <h2 id="progress-1018-title">10月16日〜18日の進捗</h2>
+      <div class="grid">
+        <article class="card"><span class="status">10月17日</span><h3>マイクで話しかける</h3><p>試作アプリにマイクボタンを付けました。押して話し、もう一度押すと送られます。聞き取ったあと6.7〜8.1秒で声で答えました（2回中2回）。</p></article>
+        <article class="card"><span class="status">10月17日</span><h3>身振りを、言われた回数どおりに</h3><p>うなずく・首を振る・手招き・手を振る・拍手・お辞儀の6種類は、「3回」などの回数どおりに動きます。12通りの頼み方で、すべて回数どおりでした（回数は1〜3回まで）。</p></article>
+        <article class="card"><span class="status">10月17日</span><h3>教えたことを覚えておく</h3><p>アプリを閉じて起動し直しても、教えた名前などを答えられるようにしました。「全部忘れて」と言うと消えます。</p></article>
+        <article class="card"><span class="status">10月18日</span><h3>歩き方を作り直す</h3><p>女性の歩き方の参考データ（モーションキャプチャの直線歩行29本）に合わせて、歩幅、腰の傾き、腕の振り、つま先の向きを作り直しました。1分あたり112歩、歩く速さは毎秒0.8mです。</p></article>
+        <article class="card"><span class="status">10月18日</span><h3>声が出るまでを短く</h3><p>最初の文が長いときは、文の途中の読点までを先に声にするようにしました。最初の声が出るまでの時間は、中央値18.5秒から9.7秒になりました。1つ目と2つ目の声の間の無音も、中央値6.6秒から0.7秒に縮みました。</p></article>
+      </div>
+    </section>
     <section id="latest-progress" aria-labelledby="latest-progress-title">
-      <h2 id="latest-progress-title">2026年10月15日の進捗</h2>
+      <h2 id="latest-progress-title">10月15日の進捗</h2>
       <div class="grid">
         <article class="card"><span class="status">表示・操作を確認</span><h3>イラストと紹介ページ</h3><p>紹介用のイラストを新しくして、動画・開発状況・ガイドラインのページを見直しました。画像の拡大表示と、試作動画の再生をブラウザーで確かめています。</p></article>
         <article class="card"><span class="status">修正して確認中</span><h3>会話の終了と中断</h3><p>会話を終えるときや、途中で止めるときの処理を直して、会話の仕組みに取り入れました。テストと実際のやり取りで確かめています。声でのやり取りや、長く続けた会話の質は、引き続き確かめています。</p></article>
@@ -189,12 +200,25 @@
       </div>
     </section>
     <figure class="workbench-art"><img src="images/r3/development-workbench.webp" srcset="images/r3/development-workbench-small.webp 640w, images/r3/development-workbench.webp 1280w" sizes="(max-width: 760px) 90vw, 900px" width="1280" height="853" loading="lazy" decoding="async" alt="ルミナの制作を紹介するアトリエのイラスト"></figure>
+    <section id="not-yet" aria-labelledby="not-yet-title">
+      <h2 id="not-yet-title">まだできないこと</h2>
+      <p class="section-intro">できるようになったことと同じくらい、まだできないことも大切にお伝えします。</p>
+      <div class="card"><ul class="plain-list">
+        <li>マイクを開いたままの、常時の聞き取り（話すときはマイクボタンを押します）</li>
+        <li>ルミナが話している最中に、声で確実に止めること（ルミナの声がマイクに入ると半分ほど）</li>
+        <li>人の声で「止まって」と言ったときの成功率の確認（まだ測っていません）</li>
+        <li>上に書いた3か所と配信室のソファ以外の場所に座ること</li>
+        <li>4回以上の回数を指定した身振り</li>
+        <li>大きく向きを変えるときの、自然な足の運び</li>
+        <li>長く待機したあとの1回目の返事（声が出るまで、これより長くかかることがあります）</li>
+      </ul></div>
+    </section>
     <section id="faq" aria-labelledby="faq-title">
       <h2 id="faq-title">よくある質問</h2>
       <div class="card faq">
         <details><summary>いま<wbr>ルミナと<wbr>話せますか？</summary><p>いいえ。ルミナは制作者のMacで動かしている試作で、話せるのは制作者の手元だけです。このページの「待ち時間を体験する」は、測った待ち時間を再現するだけで、AIが返事を作っているわけではありません。体験版を公開するかどうかは、時期も含めてまだ決まっていません。</p></details>
         <details><summary>返事は<wbr>いつも<wbr>1.35秒で<wbr>届きますか？</summary><p>いいえ。1.35秒は、今回の条件で20回測ったときの中央値（速い順に並べたときに真ん中にくる2回の平均）です。最短は1.07秒、最長は7.73秒でした。質問の内容やそれまでの会話、そのときの状況によって変わります。</p></details>
-        <details><summary>声での<wbr>会話も<wbr>同じ速さですか？</summary><p>いいえ、同じではありません。このページの数字は、文章で返事が届くまでの時間です。こちらの声を聞き取る時間や、ルミナが返事を声にして話す時間は含んでいません。声で話すまでの時間は、短くする調整を続けています。</p></details>
+        <details><summary>声での<wbr>会話も<wbr>同じ速さですか？</summary><p>いいえ。上の1.35秒は、文章で返事が届くまでの時間です。声で話しかけた場合は、話しかけてから声が出るまで、日常の短い話しかけで5.5〜8.8秒でした（10月17日）。長く待機したあとの1回目や、長い説明を求めたときは、もっとかかることがあります。</p></details>
         <details><summary>ルミナの<wbr>動きは<wbr>完成していますか？</summary><p>いいえ、まだ開発中です。会話から動きにつなげる試作を進めながら、ねらいどおりに、自然に動けるかを確かめています。歩き方も少しずつ改善しています。</p></details>
       </div>
     </section>
