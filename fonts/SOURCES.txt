@@ -53,3 +53,6 @@ f349e5c5f705a845a4f93d70b63f6e5a4bd139dc3bb5c75e6cf74da6d84940dc  noto-sans-jp-l
 e09e18b76580419508c0ea22f1213ed92ae09ce65fd059f0fbf0fa447a620b51  noto-sans-jp-74.woff2  20764 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.74.woff2
 d9a84b8300079136145698976b1c8b9e60895c0cc88673c4ea0dbcb28f99511f  noto-sans-jp-80.woff2  20356 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.80.woff2
 8ba4241cca98b04822b61ba9bb3e2f91f81709e3294317e50dd340302edd82f9  noto-sans-jp-89.woff2  20220 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.89.woff2
+
+# Added 2026-10-31 for characters used by the redesigned pages (same Google Fonts CSS, v57)
+6b500513a4cb4328b6a3fdb4482d368114e07ffca45852b83506eaed6733adfd  noto-sans-jp-79.woff2  22296 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.79.woff2

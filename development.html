@@ -8,7 +8,7 @@
   <title>開発状況・試作動画｜Lumina（ルミナ）</title>
   <meta name="description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。文章で返事が届くまでの時間を測った結果や、会話から動きにつなげる試作、試作動画、3D体験版の公開状況をご紹介します。">
   <link rel="canonical" href="https://hoshikuzukobo42-maker.github.io/lumina-hp/development.html">
-  <meta name="theme-color" content="#fcfaff">
+  <meta name="theme-color" content="#f8f6fb">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
   <meta property="og:type" content="website">
@@ -28,18 +28,20 @@
   <meta name="twitter:image" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/images/ogp.jpg">
   <meta name="twitter:image:alt" content="夕暮れの天文ラウンジで、こちらへ手を差し出すルミナの全身イラスト">
   <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="css/development.css">
-  <link rel="stylesheet" href="css/subpages.css">
+  <link rel="stylesheet" href="css/site.css">
 </head>
-<body>
+<body class="doc">
   <a class="skip" href="#main">本文へ移動</a>
-  <nav class="nav" aria-label="メインナビゲーション">
-    <a class="brand" href="index.html" aria-label="Lumina トップページ">LUMINA</a>
-    <a class="nav-back" href="index.html">← トップへ戻る</a>
-  </nav>
-  <main id="main">
-    <header>
-      <p class="eyebrow">DEVELOPMENT · LUMINA</p>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="brand" href="index.html" aria-label="Lumina トップページ">L<span class="brand-star" aria-hidden="true">✦</span>MINA</a>
+      <nav class="global-nav" aria-label="メインナビゲーション"><a href="index.html#about">ルミナについて</a><a href="index.html#profile">プロフィール</a><a href="index.html#gallery">ギャラリー</a><a href="development.html" aria-current="page">開発状況</a><a href="guidelines.html">ガイドライン</a></nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+  <div class="wrap">
+    <header class="page-head">
+      <p class="label">Development</p>
       <h1>ルミナの今と、これから。</h1>
       <p class="lead">Lumina（ルミナ）は、会話と3D空間での行動をつなぐAIキャラクターの開発プロジェクトです。言葉を交わし、周りの様子をつかんで、その場に合った動きにつなげる。そんなルミナを目指して、試作と検証を重ねています。このページでは、開発の進み具合や測定結果、試作動画をご紹介します。</p>
       <p class="updated">開発状況：2026年10月15日時点（返事までの時間は10月6日に測定）</p>
@@ -204,13 +206,15 @@
         <details><summary>ルミナの<wbr>動きは<wbr>完成していますか？</summary><p>いいえ、まだ開発中です。会話から動きにつなげる試作を進めながら、ねらいどおりに、自然に動けるかを確かめています。歩き方も少しずつ改善しています。</p></details>
       </div>
     </section>
-    <div class="closing"><a class="button primary" href="index.html">← トップへ戻る</a></div>
+    <div class="closing"><a class="button" href="index.html">← トップへ戻る</a></div>
+  </div>
   </main>
-  <footer>
-    <p>LUMINA · 会話の先まで、一緒に。</p>
-    <p>制作者・お問い合わせ：<a href="https://x.com/hoshikuzukobo42" rel="external noopener">X @hoshikuzukobo42</a></p>
-    <p class="footer-links"><a href="guidelines.html">利用・二次創作ガイドライン</a><a href="index.html">トップページ</a></p>
-    <p>© 2026 @hoshikuzukobo42</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-id"><img src="images/r3/icon-portrait.jpg" width="256" height="256" loading="lazy" alt=""><div><p class="brand">L<span class="brand-star" aria-hidden="true">✦</span>MINA</p><p>会話の先まで、一緒に。</p></div></div>
+      <nav class="footer-nav" aria-label="サイト内リンク"><a href="index.html">トップ</a><a href="development.html">開発状況・試作動画</a><a href="guidelines.html">利用・二次創作ガイドライン</a><a href="https://x.com/hoshikuzukobo42" rel="external noopener">X @hoshikuzukobo42</a></nav>
+    </div>
+    <div class="footer-bottom"><p>ルミナは制作者のMacで動かしている開発中の試作です。販売・配布はしていません。</p><p>© 2026 @hoshikuzukobo42</p></div>
   </footer>
 <script src="js/bench.js" defer></script>
 </body>
