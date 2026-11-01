@@ -304,6 +304,87 @@ p,li,dd,td,th,figcaption{line-break:strict;text-wrap:pretty;word-break:auto-phra
 .guide .history{color:var(--muted);font-size:14px}
 .guide .nowrap{white-space:nowrap}
 
+/* ── Sparkle (2026-11-01, round 2: louder) ──────────────────────
+   Flare stars (images/sparkle-flare-*.svg), small glints (sparkle-*.svg) and soft bokeh (bokeh-*.svg) in layers
+   that twinkle out of step; violet-to-gold gradient headings with a travelling sheen; shimmering gold hairlines on
+   cards, pictures and buttons; denser night bands with shooting stars. Text sits on its own surfaces or behind
+   masks, and every animation stops under prefers-reduced-motion (rule near the end of this file). */
+@keyframes twinkle{0%,100%{opacity:.35}50%{opacity:1}}
+@keyframes twinkle-b{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes sheen{0%{background-position:100% 0}45%,100%{background-position:0 0}}
+@keyframes star-pulse{0%,100%{transform:scale(1) rotate(0);opacity:.9}50%{transform:scale(1.45) rotate(45deg);opacity:1}}
+@keyframes drift{0%{transform:translate3d(0,0,0)}50%{transform:translate3d(-2.5%,-4%,0)}100%{transform:translate3d(0,0,0)}}
+@keyframes border-flow{0%{background-position:0 0,0 50%}100%{background-position:0 0,300% 50%}}
+@keyframes shine{0%,62%{transform:translateX(-130%) skewX(-18deg)}80%,100%{transform:translateX(230%) skewX(-18deg)}}
+@keyframes shoot{0%{transform:translate(0,0) rotate(-18deg);opacity:0}3%{opacity:1}12%{opacity:0;transform:translate(min(70vw,900px),max(-23vw,-292px)) rotate(-18deg)}100%{opacity:0;transform:translate(min(70vw,900px),max(-23vw,-292px)) rotate(-18deg)}}
+@keyframes glow{0%,100%{box-shadow:0 8px 22px #5a3d9347,0 0 0 1px #f3dca680,0 0 14px #e9c46a33}50%{box-shadow:0 8px 26px #5a3d9366,0 0 0 1px #f3dca6,0 0 26px #e9c46a80}}
+body{overflow-x:clip}
+:root{--gold-flow:linear-gradient(90deg,#d9c8f5,#f6e3a8 18%,#c99a45 30%,#e7dcfb 46%,#9fd3df 62%,#f6e3a8 78%,#d9c8f5 100%)}
+/* Masthead: a gold-violet-sky line that flows */
+.masthead{border-bottom-color:transparent}
+.masthead::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold-flow) 0 0/300% 100%;animation:border-flow 9s linear infinite;opacity:.9}
+.brand-star,.hero-eyebrow::before{text-shadow:0 0 10px #f1d08a,0 0 2px #fff}
+/* Headings: violet-to-gold gradient text with a travelling sheen, a pulsing star above, a flowing underline */
+.section-head h2::before,.page-head h1::before,.doc h2::before,.film h2::before,.contact-card h2::before{width:max-content;color:#d4a64a;font-size:22px;text-shadow:0 0 12px #f1d08a,0 0 4px #fff;animation:star-pulse 2.8s ease-in-out infinite}
+.hero h1,.page-head h1,.section-head h2,.doc h2,.contact-card h2{background:linear-gradient(105deg,#3a2766 0%,#6a45b8 26%,#a77fe6 36%,#e6bb55 44%,#fff1c4 47%,#e6bb55 50%,#5aa9c0 58%,#4a3290 68%,#6a45b8 100%) 0 0/280% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s ease-in-out infinite}
+.hero h1{filter:drop-shadow(0 2px 14px #b998ff66)}
+.section-head h2,.doc h2,.contact-card h2{width:fit-content;animation-duration:7s}
+.film h2{background:linear-gradient(105deg,#fff 0%,#e6dcff 30%,#f6d98e 44%,#fff8e0 48%,#f6d98e 52%,#bfe8f3 62%,#fff 100%) 0 0/280% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content;animation:sheen 6s ease-in-out infinite;filter:drop-shadow(0 0 12px #c9b2ff66)}
+.page-head h1::before,.section-head h2::before,.doc h2::before,.contact-card h2::before,.film h2::before{-webkit-text-fill-color:#d4a64a}
+.section-head h2::after,.doc h2::after,.film h2::after,.page-head h1::after{content:"";display:block;width:96px;height:3px;margin-top:14px;border-radius:3px;background:var(--gold-flow) 0 0/300% 100%;animation:border-flow 6s linear infinite;box-shadow:0 0 10px #e9c46a66}
+/* Hero: bokeh drifting over the picture, two glint layers and big flare stars twinkling out of step */
+.hero{--hero-glint-mask:linear-gradient(90deg,transparent 30%,#0006 38%,#000 46%)}
+.hero-bg{z-index:0}
+.hero::after{z-index:1}
+.hero-inner{z-index:3}
+.hero::before,.hero-bg::after,.hero-bg::before{content:"";position:absolute;pointer-events:none;-webkit-mask-image:var(--hero-glint-mask);mask-image:var(--hero-glint-mask)}
+.hero-bg::before{inset:-8%;background:url(../images/bokeh-light.svg) 0 0/900px 700px;mix-blend-mode:screen;opacity:.9;animation:drift 18s ease-in-out infinite}
+.hero::before{inset:0;z-index:2;background:url(../images/sparkle-flare-night.svg) 40px 0/600px 560px,url(../images/sparkle-night-a.svg) 0 0/420px 340px;animation:twinkle 3.6s ease-in-out infinite}
+.hero-bg::after{inset:0;background:url(../images/sparkle-night-b.svg) 130px 60px/380px 460px,url(../images/sparkle-flare-night.svg) 330px 250px/520px 485px;animation:twinkle-b 4.8s ease-in-out infinite}
+.hero-copy{position:relative}
+.hero-copy::before{content:"";position:absolute;z-index:-1;top:-90px;right:-140px;width:460px;height:200px;pointer-events:none;background:url(../images/sparkle-flare-light.svg) -120px -40px/640px 520px;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 62% 50%,#000,transparent);mask-image:radial-gradient(ellipse 50% 50% at 62% 50%,#000,transparent);animation:twinkle 3s ease-in-out -1.2s infinite}
+.hero-eyebrow{border:1.5px solid transparent;background:linear-gradient(#fffffff2,#fffffff2) padding-box,var(--gold-flow) 0 50%/300% 100% border-box;box-shadow:0 4px 18px #c9963a33,0 0 16px #e9c46a40;animation:border-flow 6s linear infinite}
+/* Buttons: gold glow that breathes, and a light sweep every few seconds */
+.btn{position:relative;overflow:hidden;isolation:isolate}
+.btn.primary{background:linear-gradient(135deg,#8a62d6,#5a3d93 50%,#3f7aa8);animation:glow 3s ease-in-out infinite}
+.btn.primary:hover{background:linear-gradient(135deg,#7a52c6,#4c3184 50%,#356a92)}
+.btn.primary::after{content:"";position:absolute;inset:0;z-index:-1;width:45%;background:linear-gradient(90deg,#fff0,#ffffff80,#fff0);animation:shine 4.5s ease-in-out infinite}
+.btn.secondary{background:linear-gradient(#ffffffd9,#ffffffd9) padding-box,var(--gold-flow) 0 50%/300% 100% border-box;border-color:transparent;animation:border-flow 7s linear infinite}
+/* Cards and panels: a gold-lavender-sky hairline that keeps flowing, and a soft halo */
+.pillars li,.profile-table,.progress-list,.timeline-block,.contact-card,.card,#response-demo .bench-card,.guide .quick-wrap,.guide .summary{border:1.5px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,var(--gold-flow) 0 50%/300% 100% border-box;box-shadow:0 1px 2px #3a2a6a0a,0 14px 36px #6a4bb01f,0 0 22px #e9c46a1f;animation:border-flow 10s linear infinite}
+.guide .summary{border-left:4px solid var(--accent)}
+.pillars strong{width:max-content;background:linear-gradient(90deg,#5a3d93,#c08a2e 55%,#2a8aa0);-webkit-background-clip:text;background-clip:text;color:transparent}
+.contact-card{background:url(../images/sparkle-flare-light.svg) right -170px top -90px/640px 520px no-repeat padding-box,radial-gradient(ellipse 50% 80% at 100% 0%,#eadcfb,#eadcfb00 70%) padding-box,linear-gradient(var(--surface),var(--surface)) padding-box,var(--gold-flow) 0 50%/300% 100% border-box;animation:border-flow-card 10s linear infinite}
+@keyframes border-flow-card{0%{background-position:right -170px top -90px,0 0,0 0,0 50%}100%{background-position:right -170px top -90px,0 0,0 0,300% 50%}}
+/* Pictures: gold frame with a halo, and a light that sweeps across now and then */
+.art,.film-frame,.theme-media{box-shadow:0 0 0 1.5px #e3c47fcc,0 14px 36px #6a4bb026,0 0 28px #c9a2ff40}
+.art::after,.film-frame::after{content:"";position:absolute;inset:0;width:40%;pointer-events:none;background:linear-gradient(90deg,#fff0,#ffffff59,#fff0);animation:shine 7s ease-in-out infinite}
+.gallery-grid figure:nth-child(2) .art::after{animation-delay:-1.8s}
+.gallery-grid figure:nth-child(3) .art::after{animation-delay:-3.6s}
+.gallery-grid figure:nth-child(4) .art::after{animation-delay:-5.4s}
+@media(hover:hover){a.art:hover{box-shadow:0 0 0 2px #e3c47f,0 18px 44px #7b55c855,0 0 36px #e9c46a66}}
+.timeline time::before{content:"✦";margin-right:6px;color:#d4a64a;font-size:12px;text-shadow:0 0 8px #f1d08a}
+/* Pale sections: brighter aurora, drifting bokeh and flare stars in the margins */
+.section.alt{position:relative;overflow:hidden;background:radial-gradient(ellipse 50% 65% at 100% 0%,#dcc8fa,#dcc8fa00 70%),radial-gradient(ellipse 45% 60% at 0% 100%,#c6e9f3,#c6e9f300 70%),radial-gradient(ellipse 30% 40% at 60% 100%,#f6e3b466,#f6e3b400 70%),linear-gradient(180deg,#f1ebfa 0%,#ecf3fa 100%)}
+.section.alt::before,#about::before,#gallery::before,#faq::before,.section.alt::after,#about::after,#gallery::after,#faq::after{content:"";position:absolute;pointer-events:none}
+.section.alt::before,#about::before,#gallery::before,#faq::before{inset:0;background:url(../images/sparkle-flare-light.svg) 0 0/640px 520px,url(../images/sparkle-light.svg) 210px 90px/520px 420px;-webkit-mask-image:linear-gradient(90deg,#000 0,#0009 9%,transparent 22%,transparent 78%,#0009 91%,#000 100%);mask-image:linear-gradient(90deg,#000 0,#0009 9%,transparent 22%,transparent 78%,#0009 91%,#000 100%);animation:twinkle 4s ease-in-out infinite}
+.section.alt::after,#about::after,#gallery::after,#faq::after{inset:-6%;background:url(../images/bokeh-light.svg) 0 0/900px 700px;opacity:.75;-webkit-mask-image:linear-gradient(90deg,#000,#0005 25%,#0002 50%,#0005 75%,#000);mask-image:linear-gradient(90deg,#000,#0005 25%,#0002 50%,#0005 75%,#000);animation:drift 22s ease-in-out infinite}
+#gallery::before,#faq::before{animation:twinkle-b 4.6s ease-in-out infinite;background-position:320px 160px,0 0}
+#about,#gallery,#faq{position:relative;overflow:hidden}
+.section.alt>.wrap,#about>.wrap,#gallery>.wrap,#faq>.wrap{position:relative;z-index:1}
+/* Night bands: denser stars, flare stars twinkling and shooting stars */
+.film,.site-footer{position:relative;overflow:hidden}
+.film::before,.site-footer::before{content:"";position:absolute;inset:0;pointer-events:none;background:url(../images/sparkle-flare-night.svg) 0 0/600px 560px,url(../images/sparkle-night-b.svg) 0 0/380px 460px,url(../images/bokeh-night.svg) 0 0/900px 700px;animation:twinkle 3.8s ease-in-out infinite}
+.film::before{-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,transparent 55%,#000 100%);mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,transparent 55%,#000 100%)}
+.site-footer::before{opacity:.85;-webkit-mask-image:linear-gradient(90deg,#000,#0006 30%,#0003 60%,#000);mask-image:linear-gradient(90deg,#000,#0006 30%,#0003 60%,#000)}
+.film::after,.site-footer::after{content:"";position:absolute;left:6%;top:82%;width:180px;height:2px;border-radius:2px;background:linear-gradient(90deg,#fff0,#fff 80%,#fff6dd);box-shadow:0 0 8px #fff,0 0 18px #f6d98e;pointer-events:none;opacity:0;animation:shoot 6s linear 1s infinite}
+.site-footer::after{left:30%;top:90%;animation-duration:8s;animation-delay:3s}
+.film-inner,.footer-inner,.footer-bottom{position:relative;z-index:1}
+.film-inner::before{content:"";position:absolute;left:58%;top:6%;width:150px;height:1.5px;border-radius:2px;background:linear-gradient(90deg,#fff0,#fff 80%,#e6dcff);box-shadow:0 0 6px #fff;pointer-events:none;opacity:0;animation:shoot 9s linear 4.5s infinite}
+/* Development and guideline pages: aurora, bokeh and flare stars behind the page title */
+.page-head{position:relative}
+.page-head::after{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:url(../images/sparkle-flare-light.svg) right -60px top -40px/640px 520px no-repeat,url(../images/sparkle-light.svg) left 20px top 10px/520px 420px no-repeat,url(../images/bokeh-light.svg) 0 0/900px 700px,radial-gradient(ellipse 40% 85% at 88% 0%,#dcc8fa,#dcc8fa00 70%),radial-gradient(ellipse 36% 75% at 6% 100%,#c6e9f3,#c6e9f300 70%);-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent);animation:twinkle 4.2s ease-in-out infinite}
+
 /* ── Responsive ───────────────────────────── */
 @media(max-width:1180px) and (min-width:961px){
   .hero::after{background:linear-gradient(90deg,#fbf8fcf5 0%,#fbf8fceb 34%,#fbf8fc99 52%,#fbf8fc00 70%),linear-gradient(180deg,#fbf8fc00 70%,#fbf8fc 100%)}
