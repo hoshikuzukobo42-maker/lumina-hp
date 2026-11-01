@@ -317,6 +317,7 @@ p,li,dd,td,th,figcaption{line-break:strict;text-wrap:pretty;word-break:auto-phra
 @keyframes border-flow{0%{background-position:0 0,0 50%}100%{background-position:0 0,300% 50%}}
 @keyframes shine{0%,62%{transform:translateX(-130%) skewX(-18deg)}80%,100%{transform:translateX(230%) skewX(-18deg)}}
 @keyframes shoot{0%{transform:translate(0,0) rotate(-18deg);opacity:0}3%{opacity:1}12%{opacity:0;transform:translate(min(70vw,900px),max(-23vw,-292px)) rotate(-18deg)}100%{opacity:0;transform:translate(min(70vw,900px),max(-23vw,-292px)) rotate(-18deg)}}
+@keyframes shoot-low{0%{transform:translate(0,0) rotate(-9deg);opacity:0}4%{opacity:1}14%{opacity:0;transform:translate(260px,-40px) rotate(-9deg)}100%{opacity:0;transform:translate(260px,-40px) rotate(-9deg)}}
 @keyframes glow{0%,100%{box-shadow:0 8px 22px #5a3d9347,0 0 0 1px #f3dca680,0 0 14px #e9c46a33}50%{box-shadow:0 8px 26px #5a3d9366,0 0 0 1px #f3dca6,0 0 26px #e9c46a80}}
 body{overflow-x:clip}
 :root{--gold-flow:linear-gradient(90deg,#d9c8f5,#f6e3a8 18%,#c99a45 30%,#e7dcfb 46%,#9fd3df 62%,#f6e3a8 78%,#d9c8f5 100%)}
@@ -326,18 +327,18 @@ body{overflow-x:clip}
 .brand-star,.hero-eyebrow::before{text-shadow:0 0 10px #f1d08a,0 0 2px #fff}
 /* Headings: violet-to-gold gradient text with a travelling sheen, a pulsing star above, a flowing underline */
 .section-head h2::before,.page-head h1::before,.doc h2::before,.film h2::before,.contact-card h2::before{width:max-content;color:#d4a64a;font-size:22px;text-shadow:0 0 12px #f1d08a,0 0 4px #fff;animation:star-pulse 2.8s ease-in-out infinite}
-.hero h1,.page-head h1,.section-head h2,.doc h2,.contact-card h2{background:linear-gradient(105deg,#3a2766 0%,#6a45b8 26%,#a77fe6 36%,#e6bb55 44%,#fff1c4 47%,#e6bb55 50%,#5aa9c0 58%,#4a3290 68%,#6a45b8 100%) 0 0/280% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s ease-in-out infinite}
+.hero h1,.page-head h1,.section-head h2,.doc h2,.contact-card h2{background:linear-gradient(105deg,#3a2766 0%,#6a45b8 26%,#8f62d8 36%,#a8771a 43%,#c9962e 47%,#a8771a 51%,#2f7f98 58%,#4a3290 68%,#6a45b8 100%) 0 0/280% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 6s ease-in-out infinite}
 .hero h1{filter:drop-shadow(0 2px 14px #b998ff66)}
 .section-head h2,.doc h2,.contact-card h2{width:fit-content;animation-duration:7s}
 .film h2{background:linear-gradient(105deg,#fff 0%,#e6dcff 30%,#f6d98e 44%,#fff8e0 48%,#f6d98e 52%,#bfe8f3 62%,#fff 100%) 0 0/280% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content;animation:sheen 6s ease-in-out infinite;filter:drop-shadow(0 0 12px #c9b2ff66)}
 .page-head h1::before,.section-head h2::before,.doc h2::before,.contact-card h2::before,.film h2::before{-webkit-text-fill-color:#d4a64a}
 .section-head h2::after,.doc h2::after,.film h2::after,.page-head h1::after{content:"";display:block;width:96px;height:3px;margin-top:14px;border-radius:3px;background:var(--gold-flow) 0 0/300% 100%;animation:border-flow 6s linear infinite;box-shadow:0 0 10px #e9c46a66}
 /* Hero: bokeh drifting over the picture, two glint layers and big flare stars twinkling out of step */
-.hero{--hero-glint-mask:linear-gradient(90deg,transparent 30%,#0006 38%,#000 46%)}
+.hero{--hero-glint-mask:linear-gradient(90deg,transparent 30%,#0006 38%,#000 46%);--hero-figure-hole:radial-gradient(ellipse 15% 62% at 64.5% 54%,transparent 72%,#000 100%)}
 .hero-bg{z-index:0}
 .hero::after{z-index:1}
 .hero-inner{z-index:3}
-.hero::before,.hero-bg::after,.hero-bg::before{content:"";position:absolute;pointer-events:none;-webkit-mask-image:var(--hero-glint-mask);mask-image:var(--hero-glint-mask)}
+.hero::before,.hero-bg::after,.hero-bg::before{content:"";position:absolute;pointer-events:none;-webkit-mask-image:var(--hero-glint-mask),var(--hero-figure-hole);-webkit-mask-composite:source-in;mask-image:var(--hero-glint-mask),var(--hero-figure-hole);mask-composite:intersect}
 .hero-bg::before{inset:-8%;background:url(../images/bokeh-light.svg) 0 0/900px 700px;mix-blend-mode:screen;opacity:.9;animation:drift 18s ease-in-out infinite}
 .hero::before{inset:0;z-index:2;background:url(../images/sparkle-flare-night.svg) 40px 0/600px 560px,url(../images/sparkle-night-a.svg) 0 0/420px 340px;animation:twinkle 3.6s ease-in-out infinite}
 .hero-bg::after{inset:0;background:url(../images/sparkle-night-b.svg) 130px 60px/380px 460px,url(../images/sparkle-flare-night.svg) 330px 250px/520px 485px;animation:twinkle-b 4.8s ease-in-out infinite}
@@ -378,7 +379,7 @@ body{overflow-x:clip}
 .film::before{-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,transparent 55%,#000 100%);mask-image:radial-gradient(ellipse 60% 70% at 50% 50%,transparent 55%,#000 100%)}
 .site-footer::before{opacity:.85;-webkit-mask-image:linear-gradient(90deg,#000,#0006 30%,#0003 60%,#000);mask-image:linear-gradient(90deg,#000,#0006 30%,#0003 60%,#000)}
 .film::after,.site-footer::after{content:"";position:absolute;left:6%;top:82%;width:180px;height:2px;border-radius:2px;background:linear-gradient(90deg,#fff0,#fff 80%,#fff6dd);box-shadow:0 0 8px #fff,0 0 18px #f6d98e;pointer-events:none;opacity:0;animation:shoot 6s linear 1s infinite}
-.site-footer::after{left:30%;top:90%;animation-duration:8s;animation-delay:3s}
+.site-footer::after{left:46%;top:62%;width:140px;animation:shoot-low 8s linear 3s infinite}
 .film-inner,.footer-inner,.footer-bottom{position:relative;z-index:1}
 .film-inner::before{content:"";position:absolute;left:58%;top:6%;width:150px;height:1.5px;border-radius:2px;background:linear-gradient(90deg,#fff0,#fff 80%,#e6dcff);box-shadow:0 0 6px #fff;pointer-events:none;opacity:0;animation:shoot 9s linear 4.5s infinite}
 /* Development and guideline pages: aurora, bokeh and flare stars behind the page title */
@@ -386,6 +387,7 @@ body{overflow-x:clip}
 .page-head::after{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;background:url(../images/sparkle-flare-light.svg) right -60px top -40px/640px 520px no-repeat,url(../images/sparkle-light.svg) left 20px top 10px/520px 420px no-repeat,url(../images/bokeh-light.svg) 0 0/900px 700px,radial-gradient(ellipse 40% 85% at 88% 0%,#dcc8fa,#dcc8fa00 70%),radial-gradient(ellipse 36% 75% at 6% 100%,#c6e9f3,#c6e9f300 70%);-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent);mask-image:linear-gradient(180deg,#000 60%,transparent);animation:twinkle 4.2s ease-in-out infinite}
 
 /* ── Responsive ───────────────────────────── */
+@media(min-width:1600px){.hero-bg img{object-position:62% 14%}} /* wide screens crop the picture by width: keep her face in frame */
 @media(max-width:1180px) and (min-width:961px){
   .hero::after{background:linear-gradient(90deg,#fbf8fcf5 0%,#fbf8fceb 34%,#fbf8fc99 52%,#fbf8fc00 70%),linear-gradient(180deg,#fbf8fc00 70%,#fbf8fc 100%)}
   .hero-copy{max-width:460px}
@@ -395,6 +397,7 @@ body{overflow-x:clip}
   .about-inner,.profile-grid,.film-inner,.faq-layout{grid-template-columns:1fr}
   .hero{display:block;min-height:0}
   .hero-bg{position:relative;aspect-ratio:3/2}
+  .hero::before{bottom:auto;aspect-ratio:3/2} /* glints stay on the picture, so the figure hole lines up */
   .hero-bg img{object-position:60% 40%}
   .hero::after{display:none}
   .hero-inner{padding:28px 0 56px}
@@ -416,6 +419,8 @@ body{overflow-x:clip}
   .global-nav{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 36px),transparent)}
   .global-nav a{padding:0 10px;font-size:14px}
   .hero-bg{aspect-ratio:4/3}
+  .hero::before{aspect-ratio:4/3}
+  .site-footer::after{display:none}
   .hero .lead{font-size:16px}
   br.pc{display:none}
   .hero-actions .btn{flex:1 1 auto}
