@@ -60,3 +60,4 @@ d9a84b8300079136145698976b1c8b9e60895c0cc88673c4ea0dbcb28f99511f  noto-sans-jp-8
 # Added 2026-10-31 for characters used by the redesigned pages (same Google Fonts CSS, v57)
 7418dc3bd59729ecdefa7a36f31953d4866d977c516df37f8e0c8047e3344a81  noto-sans-jp-81.woff2  20020 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.81.woff2
 4c2ccdbe298de0510aaaecc8a61ecf59d9001d13f3a0bcd1a9a8f26f6d73e753  noto-sans-jp-84.woff2  21164 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.84.woff2
+68ce66639d66a6070a74727c8299eb8d12bc09a07ec002ebeb22ede5417263e1  noto-sans-jp-61.woff2  21836 bytes  <- https://fonts.gstatic.com/s/notosansjp/v57/-F62fjtqLzI2JPCgQBnw7HFowwII2lcnk-AFfrgQrvWXpdFg3KXxAMsKMbdN.61.woff2  (added 2026-11-03 for 黎 in the voice credit)
