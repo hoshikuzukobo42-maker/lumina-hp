@@ -6,7 +6,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>開発状況・試作動画｜Lumina（ルミナ）</title>
-  <meta name="description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。声での会話、歩く・座る、話の途中で止める仕組みなど、2026年10月18日時点の進み具合を実測値とともにご紹介します。まだできないことも載せています。">
+  <meta name="description" content="Lumina（ルミナ）が階段を上り、読書机に触れる試作動画を公開しています。これまでの歩行や着席の映像、開発状況、測定結果もご覧いただけます。">
   <link rel="canonical" href="https://hoshikuzukobo42-maker.github.io/lumina-hp/development.html">
   <meta name="theme-color" content="#f8f6fb">
   <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
@@ -14,7 +14,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lumina（ルミナ）">
   <meta property="og:title" content="開発状況・試作動画｜Lumina（ルミナ）">
-  <meta property="og:description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。声での会話、歩く・座る、話の途中で止める仕組みなど、2026年10月18日時点の進み具合を実測値とともにご紹介します。まだできないことも載せています。">
+  <meta property="og:description" content="Lumina（ルミナ）が階段を上り、読書机に触れる試作動画を公開しています。これまでの歩行や着席の映像、開発状況、測定結果もご覧いただけます。">
   <meta property="og:url" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/development.html">
   <meta property="og:image" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/images/ogp/development.jpg">
   <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@hoshikuzukobo42">
   <meta name="twitter:title" content="開発状況・試作動画｜Lumina（ルミナ）">
-  <meta name="twitter:description" content="Lumina（ルミナ）の開発状況とよくある質問のページです。声での会話、歩く・座る、話の途中で止める仕組みなど、2026年10月18日時点の進み具合を実測値とともにご紹介します。まだできないことも載せています。">
+  <meta name="twitter:description" content="Lumina（ルミナ）が階段を上り、読書机に触れる試作動画を公開しています。これまでの歩行や着席の映像、開発状況、測定結果もご覧いただけます。">
   <meta name="twitter:image" content="https://hoshikuzukobo42-maker.github.io/lumina-hp/images/ogp/development.jpg">
   <meta name="twitter:image:alt" content="ルミナのイラストと、「ルミナの今と、これから。」開発状況・試作動画の文字">
   <link rel="stylesheet" href="css/fonts.css">
@@ -43,13 +43,13 @@
     <header class="page-head">
       <h1>ルミナの今と、これから。</h1>
       <p class="lead">ルミナは、会話と3D空間での動きをつなぐAIキャラクターとして開発しています。話して、まわりの様子をつかみ、その場に合った動きにつなげる。そのための試作と確認を重ねています。このページでは、進み具合や測った結果、試作動画をご紹介します。</p>
-      <p class="updated">開発状況：2026年10月18日時点。数字はすべて、制作者のMac（Apple M1 Max・32GB）で動かしている試作アプリで測った値です。</p>
+      <p class="updated">2026年11月20日、階段と読書机の検証動画を追加しました。測定日は各項目に記載しています。測定は、制作者のMac（Apple M1 Max・32GB）で動かした試作アプリで行いました。</p>
       <nav class="toc" aria-label="このページの内容">
         <a href="#prototype-overview">いまの取り組み</a>
         <a href="#response">返事までの時間</a>
         <a href="#action">会話から動きへ</a>
-        <a href="#demo-video">試作動画</a>
-        <a href="#progress-1018">最新の進捗</a>
+        <a href="#motion-verification">試作動画</a>
+        <a href="#progress-1018">10月の進捗</a>
         <a href="#not-yet">まだできないこと</a>
         <a href="#development-log">開発ログ</a>
         <a href="#faq">よくある質問</a>
@@ -127,6 +127,33 @@
       <div class="grid">
         <div class="card"><span class="status">11月1日に収録</span><h3>会話から<wbr>ソファまでの<wbr>試作動画</h3><p>ルミナがソファまで歩いて座るところを収めた、音声なしの動画です。この動画は、ルミナと話せる体験版ではありません。</p><p><a class="demo-watch-link" href="#demo-video">試作動画を見る</a></p></div>
         <div class="card"><span class="status">未定</span><h3>3D体験版</h3><p>ルミナと話せる3D体験版を公開するかどうかは、時期も含めてまだ決まっていません。</p></div>
+      </div>
+
+      <div id="motion-verification" aria-labelledby="motion-verification-title">
+        <h3 id="motion-verification-title">11月20日収録　階段を上る・読書机に触れる</h3>
+        <p>空の城を使った試作アプリの検証録画です。どちらも音声なしで、録画の再生時間は実際の動作時間と異なります。</p>
+        <div class="verification-videos">
+          <figure id="stair-follow-video" class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-stair-follow-20261120-poster.webp" aria-label="階段を上る追従の検証動画（約19秒・音声なし）" aria-describedby="stair-follow-caption">
+              <source src="lumina-stair-follow-20261120.mp4" type="video/mp4">
+              <a href="lumina-stair-follow-20261120.mp4">階段の動画を開く</a>
+            </video>
+            <figcaption id="stair-follow-caption">
+              <p><strong>階段を上って追従する</strong><br>ルミナが階段を上り、上階に着くまでが映っています。階段に沿う経路計算と、足裏の位置を段差に合わせる処理を使っています。撮影時は追従の確認のため会話の接続を無効にしています。別の試験では、下りと階段途中での停止も確認しました。</p>
+              <p><a href="lumina-stair-follow-20261120.mp4">階段の動画を直接開く（約19秒）</a></p>
+            </figcaption>
+          </figure>
+          <figure id="desk-touch-video" class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-desk-touch-20261120-poster.webp" aria-label="右手で読書机に触れる検証動画（約3.5秒・音声なし）" aria-describedby="desk-touch-caption">
+              <source src="lumina-desk-touch-20261120.mp4" type="video/mp4">
+              <a href="lumina-desk-touch-20261120.mp4">読書机の動画を開く</a>
+            </video>
+            <figcaption id="desk-touch-caption">
+              <p><strong>右手で読書机に触れる</strong><br>文字で「生成モーションで読書机に右手で触れて」と頼んだ場面です。ARDYが生成したVRMAの動きに、逆運動学で指先を天板に合わせる処理を加えています。この試験では約1秒の接触を確認しました。</p>
+              <p><a href="lumina-desk-touch-20261120.mp4">読書机の動画を直接開く（約3.5秒）</a></p>
+            </figcaption>
+          </figure>
+        </div>
       </div>
 
       <div id="demo-video"><figure class="demo-recording">
