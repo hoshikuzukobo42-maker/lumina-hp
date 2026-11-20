@@ -219,6 +219,12 @@ p,li,dd,td,th,figcaption{line-break:strict;text-wrap:pretty;word-break:auto-phra
 .doc #ardy-verification{margin-top:48px}
 .doc .verification-videos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .doc .verification-videos video{aspect-ratio:16/9}
+.doc #motion-verification{margin-top:32px}
+.doc #motion-verification h4{margin-top:24px;font-size:1rem}
+.doc .motion-clip-grid figure{margin-top:12px}
+@media(min-width:1000px){
+  .doc .motion-clip-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
 .doc .plain-list{padding-left:1.2em;list-style:disc;color:var(--text)}
 .doc .plain-list li+li{margin-top:8px}
 .doc .note{margin-top:20px;padding:14px 18px;border-radius:var(--radius-sm);background:var(--bg-alt);font-size:14px;color:var(--muted)}

@@ -62,13 +62,13 @@
       <div class="grid">
         <article class="card">
           <h3>ついてきて、途中で待つ</h3>
-          <p>「ついてきて」で追従を始め、「ここで待ってて」で止まります。地上階では約14.6 m追従し、高低差約4.65 mの階段では、上り・下り・途中停止をそれぞれ確認しました。これらの試験で衝突は0件でした。</p>
-          <p><a href="#stair-follow-video">階段を上る動画を見る</a></p>
+          <p>「ついてきて」で追従を始め、「ここで待ってて」で止まります。地上階では約14.6 m追従し、高低差約4.65 mの階段では、上り・下り・途中停止をそれぞれ確認しました。これらの試験で衝突は0件でした。下の階に先に移動した来訪者へ追従するときは、進める着地点を下の階で探し直します。</p>
+          <p><a href="#stair-follow-video">上り</a>・<a href="#stair-descent-video">下り</a>・<a href="#stair-stop-video">途中停止</a>の動画</p>
         </article>
         <article class="card">
           <h3>家具や本を指先で触る</h3>
-          <p>文字で対象と使う手を指定すると、ルミナが対象のそばまで行って手を伸ばします。指先が触れていた時間は、読書机の天板に右手で約1.00秒、飾り棚に左手で約1.02秒、読書机の開いた本に右手で約0.33秒でした。机を隠した試験では、動きの生成を始めずに終了しました。</p>
-          <p><a href="#desk-touch-video">読書机に触れる動画を見る</a></p>
+          <p>文字で対象と使う手を指定すると、ルミナが対象のそばまで行って手を伸ばします。最初の検証で指先が触れていた時間は、読書机の天板に右手で約1.00秒、飾り棚に左手で約1.02秒、読書机の開いた本に右手で約0.33秒でした。机を隠した試験では、動きの生成を始めずに終了しました。</p>
+          <p><a href="#desk-touch-video">読書机</a>・<a href="#shelf-touch-video">飾り棚</a>・<a href="#book-touch-video">開いた本</a>への接触動画</p>
         </article>
         <article class="card">
           <h3>見回してソファに座る</h3>
@@ -140,7 +140,7 @@
     <section id="action" aria-labelledby="action-title">
       <h2 id="action-title">会話から、動きへ</h2>
       <div class="card">
-        <p>「右手で2回手を振ってから空を見て」のように、複数の動作を順に頼めます。11月19日の試験では、指定した手と回数で動作することや、拍手の途中で左手の手振りに切り替えることを確認しました。</p>
+        <p>「右手で2回手を振ってから空を見て」のように、複数の動作を順に頼めます。11月19日の試験では、指定した手と回数で動作することや、拍手の途中で左手の手振りに切り替えることを確認しました。11月20日の再試験では、左右と後ろを向くときに、足を置くタイミングに合わせて身体の回転を調整しました。</p>
         <p>歩行と追従では、Godotで通れる経路を求め、足裏と床の位置を合わせます。生成を指定した動作では、ARDYが指示からVRMA形式のアニメーションを作り、ルミナの3Dモデルで再生します。接触動作ではさらに、手足の関節の角度を計算する逆運動学で、指先を対象の表面に合わせています。</p>
       </div>
       <div class="theme-grid">
@@ -157,19 +157,43 @@
       </div>
 
       <div id="motion-verification" aria-labelledby="motion-verification-title">
-        <h3 id="motion-verification-title">11月20日収録　階段を上る・読書机に触れる</h3>
-        <p>空の城を使った試作アプリの検証録画です。どちらも音声なしで、録画の再生時間は実際の動作時間と異なります。</p>
-        <div class="verification-videos">
+        <h3 id="motion-verification-title">11月20日収録　階段と指先の動作検証</h3>
+        <p>空の城を使った試作アプリの検証録画です。6本とも音声なしです。フレームを記録してつないでいるため、再生時間は実際の動作時間と異なります。</p>
+        <h4 id="stair-clips-title">階段での追従と停止</h4>
+        <div class="verification-videos motion-clip-grid" aria-labelledby="stair-clips-title" role="group">
           <figure id="stair-follow-video" class="demo-recording">
             <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-stair-follow-20261120-poster.webp" aria-label="階段を上る追従の検証動画（約19秒・音声なし）" aria-describedby="stair-follow-caption">
               <source src="lumina-stair-follow-20261120.mp4" type="video/mp4">
               <a href="lumina-stair-follow-20261120.mp4">階段の動画を開く</a>
             </video>
             <figcaption id="stair-follow-caption">
-              <p><strong>階段を上って追従する</strong><br>ルミナが階段を上り、上階に着くまでが映っています。階段に沿う経路計算と、足裏の位置を段差に合わせる処理を使っています。撮影時は追従の確認のため会話の接続を無効にしています。別の試験では、下りと階段途中での停止も確認しました。</p>
+              <p><strong>階段を上って追従する</strong><br>ルミナが階段を上り、上階に着くまでが映っています。階段に沿う経路計算と、足裏の位置を段差に合わせる処理を使っています。撮影時は追従の確認のため会話の接続を無効にしています。</p>
               <p><a href="lumina-stair-follow-20261120.mp4">階段の動画を直接開く（約19秒）</a></p>
             </figcaption>
           </figure>
+          <figure id="stair-descent-video" class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-stair-descent-20261120-poster.webp" aria-label="階段を下りて追従する検証動画（音声なし）" aria-describedby="stair-descent-video-caption">
+              <source src="lumina-stair-descent-20261120.mp4" type="video/mp4">
+              <a href="lumina-stair-descent-20261120.mp4">階段を下りて追従する動画を開く</a>
+            </video>
+            <figcaption id="stair-descent-video-caption">
+              <p><strong>階段を下りて追従する</strong><br>上階から階段を下り、地上階に着くまでを収録しました。</p>
+              <p><a href="lumina-stair-descent-20261120.mp4">階段を下りて追従する動画を直接開く</a></p>
+            </figcaption>
+          </figure>
+          <figure id="stair-stop-video" class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-stair-stop-20261120-poster.webp" aria-label="階段の途中で止まる検証動画（音声なし）" aria-describedby="stair-stop-video-caption">
+              <source src="lumina-stair-stop-20261120.mp4" type="video/mp4">
+              <a href="lumina-stair-stop-20261120.mp4">階段の途中で止まる動画を開く</a>
+            </video>
+            <figcaption id="stair-stop-video-caption">
+              <p><strong>階段の途中で止まる</strong><br>「ここで待ってて」の指示を受けて、足を踏み直してから階段の途中で止まります。</p>
+              <p><a href="lumina-stair-stop-20261120.mp4">階段の途中で止まる動画を直接開く</a></p>
+            </figcaption>
+          </figure>
+        </div>
+        <h4 id="touch-clips-title">家具と本への接触</h4>
+        <div class="verification-videos motion-clip-grid" aria-labelledby="touch-clips-title" role="group">
           <figure id="desk-touch-video" class="demo-recording">
             <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-desk-touch-20261120-poster.webp" aria-label="右手で読書机に触れる検証動画（約3.5秒・音声なし）" aria-describedby="desk-touch-caption">
               <source src="lumina-desk-touch-20261120.mp4" type="video/mp4">
@@ -178,6 +202,26 @@
             <figcaption id="desk-touch-caption">
               <p><strong>右手で読書机に触れる</strong><br>文字で「生成モーションで読書机に右手で触れて」と頼んだ場面です。ARDYが生成したVRMAの動きに、逆運動学で指先を天板に合わせる処理を加えています。この試験では約1秒の接触を確認しました。</p>
               <p><a href="lumina-desk-touch-20261120.mp4">読書机の動画を直接開く（約3.5秒）</a></p>
+            </figcaption>
+          </figure>
+          <figure id="shelf-touch-video" class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-shelf-touch-20261120-poster.webp" aria-label="左手で飾り棚に触れる検証動画（音声なし）" aria-describedby="shelf-touch-video-caption">
+              <source src="lumina-shelf-touch-20261120.mp4" type="video/mp4">
+              <a href="lumina-shelf-touch-20261120.mp4">左手で飾り棚に触れる動画を開く</a>
+            </video>
+            <figcaption id="shelf-touch-video-caption">
+              <p><strong>左手で飾り棚に触れる</strong><br>「飾り棚に左手で触れて」と頼み、左手の指先が棚の表面に触れるところを収録しました。</p>
+              <p><a href="lumina-shelf-touch-20261120.mp4">左手で飾り棚に触れる動画を直接開く</a></p>
+            </figcaption>
+          </figure>
+          <figure id="book-touch-video" class="demo-recording">
+            <video controls muted playsinline preload="none" width="960" height="540" poster="lumina-book-touch-20261120-poster.webp" aria-label="右手で開いた本に触れる検証動画（音声なし）" aria-describedby="book-touch-video-caption">
+              <source src="lumina-book-touch-20261120.mp4" type="video/mp4">
+              <a href="lumina-book-touch-20261120.mp4">右手で開いた本に触れる動画を開く</a>
+            </video>
+            <figcaption id="book-touch-video-caption">
+              <p><strong>右手で開いた本に触れる</strong><br>「読書机の開いた本に右手で触れて」と頼み、右手の指先が開いたページに触れるところを収録しました。この撮影では約1.07秒の接触を確認しました。</p>
+              <p><a href="lumina-book-touch-20261120.mp4">右手で開いた本に触れる動画を直接開く</a></p>
             </figcaption>
           </figure>
         </div>
