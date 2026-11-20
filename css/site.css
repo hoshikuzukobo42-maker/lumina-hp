@@ -227,6 +227,7 @@ p,li,dd,td,th,figcaption{line-break:strict;text-wrap:pretty;word-break:auto-phra
 .doc .faq{padding:0 clamp(20px,3vw,28px)}
 .doc .faq details{border-bottom:1px solid var(--line)}
 .doc .faq details:last-child{border-bottom:0}
+.doc .motion-checklist{margin-top:16px}
 .doc .faq summary{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:64px;padding:14px 0;color:var(--ink);font-weight:500;cursor:pointer;list-style:none}
 .doc .faq summary::-webkit-details-marker{display:none}
 .doc .faq summary::after{content:"";flex:none;width:10px;height:10px;margin:-5px 6px 0 0;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(45deg)}
