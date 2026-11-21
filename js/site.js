@@ -29,6 +29,26 @@
     document.querySelectorAll('[data-reveal]').forEach(element => observer.observe(element));
   }
 
+  // Castle loop: plays only while on screen, never when reduced motion is asked for; a button stops it.
+  const castle = document.querySelector('.castle-video');
+  const toggle = document.querySelector('.castle-toggle');
+  if (castle && toggle && 'IntersectionObserver' in window) {
+    let stopped = false;
+    let visible = false;
+    const sync = () => {
+      const play = visible && !stopped && !motion.matches && !document.hidden;
+      if (play) { if (castle.paused) castle.play().catch(() => {}); }
+      else if (!castle.paused) castle.pause();
+      toggle.textContent = stopped ? '動かす' : '動きを止める';
+      toggle.hidden = motion.matches;
+    };
+    toggle.addEventListener('click', () => { stopped = !stopped; sync(); });
+    new IntersectionObserver(entries => { visible = entries[0].isIntersecting; sync(); }, { threshold: .25 }).observe(castle);
+    document.addEventListener('visibilitychange', sync);
+    if (motion.addEventListener) motion.addEventListener('change', sync);
+    sync();
+  }
+
   const dialog = document.querySelector('.art-dialog');
   if (!dialog || typeof dialog.showModal !== 'function') return;
   const image = dialog.querySelector('img');
